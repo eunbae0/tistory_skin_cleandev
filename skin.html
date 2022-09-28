@@ -1,0 +1,149 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta
+		name="viewport"
+		content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+	/>
+	<title>[##_page_title_##]</title>
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="[##_title_##]"
+		href="[##_rss_url_##]"
+	/>
+
+	<link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+	<s_t3>
+		<!-- Header -->
+		<header role="header" class="flex p-8 w-full h-30">
+			<h2>title</h2>
+		</header>
+		<div class="w-full flex h-full">
+			<s_sidebar>
+				<s_sidebar_element>
+					<!-- 카테고리 -->
+					<section class="w-40">
+						<h3 class="text-center pb-3 border-b w-full">CATEGORY</h3>
+						[##_category_list_##]
+					</section>
+				</s_sidebar_element>
+			</s_sidebar>
+
+			<main role="main" class="w-full">
+				<section role="banner">
+					<div class="flex justify-between">
+						<div class="flex">
+							<div class="flex justify-center items-center">
+								<img
+									class="w-60 h-60"
+									src="[##_image_##]"
+									alt="profile image"
+								/>
+							</div>
+							<div>
+								<h2 class="font-bold">[##_blogger_##]</h2>
+								<p>[##_desc_##]</p>
+							</div>
+						</div>
+						<ul class="w-20">
+							<s_if_var_github_link>
+								<li>
+									<a href="[##_var_{github_link}_##]" target="_blank"
+										>깃허브 이미지</a
+									>
+								</li>
+							</s_if_var_github_link>
+						</ul>
+					</div>
+				</section>
+
+				<!-- 본문 -->
+				<s_article_rep>
+					<!-- 인덱스 페이지 -->
+					<s_index_article_rep>
+						<div class="flex justify-between px-5 py-10">
+							<div class="index_desc_wrapper">
+								<a href="[##_article_rep_link_##]">
+									<p class="font-bold text-4xl">[##_article_rep_title_##]</p>
+								</a>
+								<p class="index_txt_post">[##_article_rep_summary_##]</p>
+								<p>
+									<a href="[##_article_rep_category_link_##]">
+										[##_article_rep_category_##]
+									</a>
+									<span>[##_article_rep_date_##]</span>
+								</p>
+							</div>
+							<div
+								class="w-60 h-60 rounded-full object-cover"
+								onclick="window.location='[##_article_rep_link_##]'"
+							>
+								<s_article_rep_thumbnail>
+									<img
+										src="[##_article_rep_thumbnail_url_##]"
+										alt="Article Thumbnail"
+									/>
+								</s_article_rep_thumbnail>
+							</div>
+						</div>
+					</s_index_article_rep>
+					<!-- //인덱스 페이지 -->
+					<!-- 퍼머링크 페이지-->
+					<s_permalink_article_rep>
+						<div class="">
+							<div class="my-14">
+								<h1 class="">[##_article_rep_title_##]</h1>
+								<div class="flex justify-between">
+									<div class="flex">
+										<!-- <a href="[##_article_rep_category_link_##]">
+                      [##_article_rep_category_##]
+                    </a> -->
+										<span>[##_blogger_##]</span>
+										<span class="date">[##_article_rep_date_##]</span>
+									</div>
+									<p>
+										<s_ad_div>
+											<div class="flex">
+												<a href="[##_s_ad_m_link_##]">수정</a>
+												<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+											</div>
+										</s_ad_div>
+									</p>
+								</div>
+							</div>
+							<div class="article_content">[##_article_rep_desc_##]</div>
+						</div>
+					</s_permalink_article_rep>
+					<!-- //퍼머링크 페이지-->
+				</s_article_rep>
+				<!-- //본문 -->
+
+				<!-- 페이징 -->
+				<s_paging>
+					<div class="paging">
+						<a [##_prev_page_##] class="[##_no_more_prev_##]">◀ PREV </a>
+						<span class="numbox">
+							<s_paging_rep>
+								<a [##_paging_rep_link_##] class="num"
+									>[[##_paging_rep_link_num_##]]
+								</a>
+							</s_paging_rep>
+						</span>
+						<a [##_next_page_##] class="[##_no_more_next_##]">NEXT ▶</a>
+					</div>
+				</s_paging>
+				<!-- //페이징 -->
+			</main>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="footer">
+			<p>Copyright <a href="[##_blogger_##]">[##_title_##]</a></p>
+			<p>Designed by <a href="" target="_blank">MemoStack</a></p>
+		</footer>
+		<!-- //Footer -->
+	</s_t3>
+</body>
