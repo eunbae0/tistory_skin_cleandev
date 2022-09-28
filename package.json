@@ -1,0 +1,22 @@
+{
+  "name": "tistory_skin_cleandev",
+  "version": "1.0.0",
+  "description": "티스토리 블로그 cleandev 스킨",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eunbae11/tistory_skin_cleandev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eunbae11/tistory_skin_cleandev/issues"
+  },
+  "homepage": "https://github.com/eunbae11/tistory_skin_cleandev#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
