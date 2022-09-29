@@ -18,8 +18,79 @@
 <body>
 	<s_t3>
 		<!-- Header -->
-		<header role="header" class="flex p-8 w-full h-30">
-			<h2>title</h2>
+		<header
+			role="header"
+			class="p-8 w-full h-30 flex justify-between items-center"
+		>
+			<h1 class="text-2xl">[##_page_title_##]</h1>
+			<div class="flex">
+				<div class="버튼동작수정">
+					<s_search>
+						<button
+							class="rounded-full border-2 p-2 mr-6 cursor-pointer"
+							onclick="[##_search_onclick_submit_##]"
+						>
+							<svg
+								class="h-[24px]"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="black"
+							>
+								<path
+									stroke-width=".1%"
+									class="fill-black"
+									d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+								></path>
+							</svg>
+						</button>
+						<!-- <input
+							class="w-40 h-11 px-2 mr-6 rounded-full border-2 outline-none"
+							type="text"
+							name="[##_search_name_##]"
+							value="[##_search_text_##]"
+							placeholder="search"
+							onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"
+						/> -->
+					</s_search>
+				</div>
+				<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
+					<a href="[##_blog_link_##]/manage/post">
+						<svg
+							class="h-[24px]"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="black"
+						>
+							<path
+								stroke-width="1.5"
+								d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+							></path>
+						</svg>
+					</a>
+				</div>
+				<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-[24px] dark:text-white"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="black"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="1.5"
+							d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+						></path>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="1.5"
+							d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+						></path>
+					</svg>
+				</div>
+			</div>
 		</header>
 		<div class="w-full min-h-full">
 			<s_sidebar>
@@ -323,7 +394,7 @@
 		<!-- Footer -->
 		<footer id="footer" class="footer">
 			<p>Copyright <a href="[##_blogger_##]">[##_title_##]</a></p>
-			<p>Designed by <a href="" target="_blank">MemoStack</a></p>
+			<p>Designed by <a href="" target="_blank">Plutos</a></p>
 		</footer>
 		<!-- //Footer -->
 	</s_t3>
