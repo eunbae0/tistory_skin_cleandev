@@ -21,7 +21,7 @@
 		<header role="header" class="flex p-8 w-full h-30">
 			<h2>title</h2>
 		</header>
-		<div class="w-full flex h-full">
+		<div class="w-full min-h-full">
 			<s_sidebar>
 				<s_sidebar_element>
 					<!-- 카테고리 -->
@@ -32,38 +32,39 @@
 				</s_sidebar_element>
 			</s_sidebar>
 
-			<main role="main" class="w-full">
-				<section role="banner">
-					<div class="flex justify-between">
-						<div class="flex">
-							<div class="flex justify-center items-center">
-								<img
-									class="w-60 h-60"
-									src="[##_image_##]"
-									alt="profile image"
-								/>
-							</div>
-							<div>
-								<h2 class="font-bold">[##_blogger_##]</h2>
-								<p>[##_desc_##]</p>
-							</div>
-						</div>
-						<ul class="w-20">
-							<s_if_var_github_link>
-								<li>
-									<a href="[##_var_{github_link}_##]" target="_blank"
-										>깃허브 이미지</a
-									>
-								</li>
-							</s_if_var_github_link>
-						</ul>
-					</div>
-				</section>
-
+			<main role="main" class="w-7/12 mx-auto my-0">
 				<!-- 본문 -->
 				<s_article_rep>
 					<!-- 인덱스 페이지 -->
 					<s_index_article_rep>
+						<!-- 블로거 정보 -->
+						<section role="banner">
+							<div class="flex justify-between">
+								<div class="flex">
+									<div class="flex justify-center items-center">
+										<img
+											class="w-44 h-44"
+											src="[##_image_##]"
+											alt="profile image"
+										/>
+									</div>
+									<div>
+										<h2 class="font-bold">[##_blogger_##]</h2>
+										<p>[##_desc_##]</p>
+									</div>
+								</div>
+								<ul class="w-20">
+									<s_if_var_github_link>
+										<li>
+											<a href="[##_var_{github_link}_##]" target="_blank"
+												>깃허브 이미지</a
+											>
+										</li>
+									</s_if_var_github_link>
+								</ul>
+							</div>
+						</section>
+						<!-- //블로거 정보 -->
 						<div class="flex justify-between px-5 py-10">
 							<div class="index_desc_wrapper">
 								<a href="[##_article_rep_link_##]">
@@ -116,6 +117,186 @@
 							</div>
 							<div class="article_content">[##_article_rep_desc_##]</div>
 						</div>
+
+						<!-- 블로거 정보 -->
+						<section role="banner">
+							<div class="flex justify-between">
+								<div class="flex">
+									<div class="flex justify-center items-center">
+										<img
+											class="w-44 h-44"
+											src="[##_image_##]"
+											alt="profile image"
+										/>
+									</div>
+									<div>
+										<h2 class="font-bold">[##_blogger_##]</h2>
+										<p>[##_desc_##]</p>
+									</div>
+								</div>
+								<ul class="w-20">
+									<s_if_var_github_link>
+										<li>
+											<a href="[##_var_{github_link}_##]" target="_blank"
+												>깃허브 이미지</a
+											>
+										</li>
+									</s_if_var_github_link>
+								</ul>
+							</div>
+						</section>
+						<!-- //블로거 정보 -->
+
+						<!-- 댓글 -->
+						<s_rp>
+							<div class="comment_wrapper">
+								<s_rp_input_form>
+									<div class="my-2">
+										<p>
+											<textarea
+												name="[##_rp_input_comment_##]"
+												class="border border-gray-400 rounded-md w-full h-20 my-2 px-4 py-2 outline-none resize-none"
+												rows="10"
+												cols="50"
+											></textarea>
+										</p>
+										<div class="flex justify-between">
+											<s_rp_member>
+												<div class="flex justify-between items-center w-full">
+													<s_rp_guest>
+														<div class="flex">
+															<input
+																type="text"
+																name="[##_rp_input_name_##]"
+																value="[##_guest_name_##]"
+																placeholder="username"
+																class="outline-none px-0.5"
+															/>
+															<input
+																type="password"
+																maxlength="8"
+																name="[##_rp_input_password_##]"
+																value="[##_rp_admin_check_##]"
+																placeholder="password"
+																class="outline-none px-0.5"
+															/>
+														</div>
+													</s_rp_guest>
+													<p class="mr-2">
+														<input
+															type="checkbox"
+															name="[##_rp_input_is_secret_##]"
+															class="checkbox"
+														/>
+														<span>비밀 글</span>
+													</p>
+												</div>
+											</s_rp_member>
+											<button
+												type="submit"
+												class="w-20 h-10 bg-lime-200 rounded-md"
+												onclick="[##_rp_onclick_submit_##]"
+											>
+												댓글 작성
+											</button>
+										</div>
+									</div>
+								</s_rp_input_form>
+
+								<!-- 댓글 폼 -->
+								<div class="">
+									<s_rp_container>
+										<ol>
+											<s_rp_rep>
+												<li id="[##_rp_rep_id_##]">
+													<div class="[##_rp_rep_class_##] my-6">
+														<div class="flex justify-between">
+															<div class="flex">
+																<div
+																	class="w-14 h-14 rounded-full object-cover"
+																>
+																	<img
+																		src="[##_rp_rep_logo_##]"
+																		alt="rep image"
+																	/>
+																</div>
+																<div>
+																	<span class="block">[##_rp_rep_name_##]</span>
+																	<span class="block text-gray-400">
+																		[##_rp_rep_date_##]</span
+																	>
+																</div>
+															</div>
+															<span class="flex">
+																<a
+																	href="#"
+																	onclick="[##_rp_rep_onclick_delete_##]"
+																	class="mx-2"
+																	>&nbsp;
+																	<span>수정/삭제</span>
+																</a>
+																<a
+																	href="#"
+																	onclick="[##_rp_rep_onclick_reply_##]"
+																	class=""
+																	>&nbsp;
+																	<span>답글 달기</span>
+																</a>
+															</span>
+														</div>
+														<p class="py-6">[##_rp_rep_desc_##]</p>
+													</div>
+													<!-- 대댓글 -->
+													<s_rp2_container>
+														<ul>
+															<s_rp2_rep>
+																<li id="[##_rp_rep_id_##]">
+																	<div class="[##_rp_rep_class_##] pl-4 my-6">
+																		<div class="flex justify-between">
+																			<div class="flex">
+																				<div
+																					class="w-14 h-14 rounded-full object-cover"
+																				>
+																					<img
+																						src="[##_rp_rep_logo_##]"
+																						alt="rep image"
+																					/>
+																				</div>
+																				<div>
+																					<span class="block"
+																						>[##_rp_rep_name_##]</span
+																					>
+																					<span class="block text-gray-400"
+																						>[##_rp_rep_date_##]</span
+																					>
+																				</div>
+																			</div>
+																			<span class="flex">
+																				<a
+																					href="#"
+																					onclick="[##_rp_rep_onclick_delete_##]"
+																					class="modify"
+																					>&nbsp;
+																					<span>수정/삭제</span>
+																				</a>
+																			</span>
+																		</div>
+																		<p class="py-6">[##_rp_rep_desc_##]</p>
+																	</div>
+																</li>
+															</s_rp2_rep>
+														</ul>
+													</s_rp2_container>
+													<!-- //대댓글 -->
+												</li>
+											</s_rp_rep>
+										</ol>
+									</s_rp_container>
+								</div>
+								<!-- //댓글 폼 -->
+							</div>
+						</s_rp>
+						<!-- //댓글 -->
 					</s_permalink_article_rep>
 					<!-- //퍼머링크 페이지-->
 				</s_article_rep>
