@@ -20,9 +20,23 @@
 		<!-- Header -->
 		<header
 			role="header"
-			class="p-8 w-full h-30 flex justify-between items-center"
+			class="p-8 w-full h-30 flex justify-between items-center relative"
 		>
-			<h1 class="text-2xl">[##_page_title_##]</h1>
+			<svg
+				class="h-[24px] px-3 cursor-pointer"
+				focusable="false"
+				aria-hidden="true"
+				viewBox="0 0 24 24"
+				data-testid="MenuIcon"
+				aria-label="fontSize medium"
+			>
+				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+			</svg>
+			<h1
+				class="absolute top-[calc(108px_/_2)] left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
+			>
+				<a href="[##_blog_link_##]">[##_title_##]</a>
+			</h1>
 			<div class="flex">
 				<div class="버튼동작수정">
 					<s_search>
@@ -69,94 +83,105 @@
 					</a>
 				</div>
 				<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="h-[24px] dark:text-white"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke="black"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="1.5"
-							d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-						></path>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="1.5"
-							d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-						></path>
-					</svg>
+					<a href="[##_blog_link_##]/manage/">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-[24px] dark:text-white"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="black"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+							></path>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+							></path>
+						</svg>
+					</a>
 				</div>
 			</div>
 		</header>
-		<div class="w-full min-h-full">
-			<s_sidebar>
-				<s_sidebar_element>
-					<!-- 카테고리 -->
-					<section class="w-40">
-						<h3 class="text-center pb-3 border-b w-full">CATEGORY</h3>
-						[##_category_list_##]
-					</section>
-				</s_sidebar_element>
-			</s_sidebar>
+		<div class="w-full min-h-full relative">
+			<div class="absolute left-[calc(41.666666%_/_4)] top-52 -translate-x-1/2">
+				<s_sidebar>
+					<s_sidebar_element>
+						<!-- 카테고리 -->
+						<section id="category" class="w-40">
+							<h5 class="text-center pb-2 border-b w-full">CATEGORY</h5>
+							[##_category_list_##]
+						</section>
+					</s_sidebar_element>
+				</s_sidebar>
+			</div>
 
 			<main role="main" class="w-7/12 mx-auto my-0">
+				<!-- 블로거 정보 -->
+				<section role="banner">
+					<div class="flex justify-between my-4">
+						<div class="flex">
+							<div class="flex justify-center items-center">
+								<img
+									class="w-40 h-40 rounded-full object-cover"
+									src="[##_image_##]"
+									alt="profile image"
+								/>
+							</div>
+							<div class="flex flex-col justify-center ml-4">
+								<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
+								<p class="py-2">[##_desc_##]</p>
+							</div>
+						</div>
+						<ul class="w-20">
+							<s_if_var_github_link>
+								<li>
+									<a href="[##_var_{github_link}_##]" target="_blank"
+										>깃허브 이미지</a
+									>
+								</li>
+							</s_if_var_github_link>
+						</ul>
+					</div>
+				</section>
+				<!-- //블로거 정보 -->
 				<!-- 본문 -->
 				<s_article_rep>
 					<!-- 인덱스 페이지 -->
 					<s_index_article_rep>
-						<!-- 블로거 정보 -->
-						<section role="banner">
-							<div class="flex justify-between">
-								<div class="flex">
-									<div class="flex justify-center items-center">
-										<img
-											class="w-44 h-44"
-											src="[##_image_##]"
-											alt="profile image"
-										/>
-									</div>
-									<div>
-										<h2 class="font-bold">[##_blogger_##]</h2>
-										<p>[##_desc_##]</p>
-									</div>
-								</div>
-								<ul class="w-20">
-									<s_if_var_github_link>
-										<li>
-											<a href="[##_var_{github_link}_##]" target="_blank"
-												>깃허브 이미지</a
-											>
-										</li>
-									</s_if_var_github_link>
-								</ul>
-							</div>
-						</section>
-						<!-- //블로거 정보 -->
-						<div class="flex justify-between px-5 py-10">
-							<div class="index_desc_wrapper">
+						<div class="h-64 px-5 py-7 flex justify-between items-center">
+							<div
+								class="h-full w-[calc(100%_-_13rem)] flex flex-col justify-between"
+							>
 								<a href="[##_article_rep_link_##]">
-									<p class="font-bold text-4xl">[##_article_rep_title_##]</p>
+									<h2 class="font-bold text-4xl pr-10">
+										[##_article_rep_title_##]
+									</h2>
 								</a>
-								<p class="index_txt_post">[##_article_rep_summary_##]</p>
-								<p>
+								<p
+									class="h-18 my-2 pr-10 text-ellipsis line-clamp-3 leading-normal align-left text-base"
+								>
+									[##_article_rep_summary_##]
+								</p>
+								<p class="text-sm text-gray-500">
 									<a href="[##_article_rep_category_link_##]">
 										[##_article_rep_category_##]
 									</a>
+									|
 									<span>[##_article_rep_date_##]</span>
 								</p>
 							</div>
-							<div
-								class="w-60 h-60 rounded-full object-cover"
-								onclick="window.location='[##_article_rep_link_##]'"
-							>
+							<div onclick="window.location='[##_article_rep_link_##]'">
 								<s_article_rep_thumbnail>
 									<img
 										src="[##_article_rep_thumbnail_url_##]"
 										alt="Article Thumbnail"
+										class="h-52 w-52 rounded-2xl object-cover"
 									/>
 								</s_article_rep_thumbnail>
 							</div>
@@ -167,23 +192,23 @@
 					<s_permalink_article_rep>
 						<div class="">
 							<div class="my-14">
-								<h1 class="">[##_article_rep_title_##]</h1>
+								<h1 class="font-bold text-5xl mb-6">
+									[##_article_rep_title_##]
+								</h1>
 								<div class="flex justify-between">
 									<div class="flex">
 										<!-- <a href="[##_article_rep_category_link_##]">
                       [##_article_rep_category_##]
                     </a> -->
-										<span>[##_blogger_##]</span>
+										<span class="mr-2">[##_blogger_##]</span>
 										<span class="date">[##_article_rep_date_##]</span>
 									</div>
-									<p>
-										<s_ad_div>
-											<div class="flex">
-												<a href="[##_s_ad_m_link_##]">수정</a>
-												<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
-											</div>
-										</s_ad_div>
-									</p>
+									<s_ad_div>
+										<div class="flex">
+											<a href="[##_s_ad_m_link_##]">수정</a>
+											<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+										</div>
+									</s_ad_div>
 								</div>
 							</div>
 							<div class="article_content">[##_article_rep_desc_##]</div>
@@ -195,14 +220,14 @@
 								<div class="flex">
 									<div class="flex justify-center items-center">
 										<img
-											class="w-44 h-44"
+											class="w-40 h-40 rounded-full object-cover"
 											src="[##_image_##]"
 											alt="profile image"
 										/>
 									</div>
-									<div>
-										<h2 class="font-bold">[##_blogger_##]</h2>
-										<p>[##_desc_##]</p>
+									<div class="flex flex-col justify-center ml-4">
+										<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
+										<p class="py-2">[##_desc_##]</p>
 									</div>
 								</div>
 								<ul class="w-20">
@@ -253,7 +278,7 @@
 															/>
 														</div>
 													</s_rp_guest>
-													<p class="mr-2">
+													<p class="mr-2 ml-auto">
 														<input
 															type="checkbox"
 															name="[##_rp_input_is_secret_##]"
@@ -265,7 +290,7 @@
 											</s_rp_member>
 											<button
 												type="submit"
-												class="w-20 h-10 bg-lime-200 rounded-md"
+												class="w-20 h-10 bg-lime-200 rounded-md ml-auto"
 												onclick="[##_rp_onclick_submit_##]"
 											>
 												댓글 작성
@@ -283,15 +308,14 @@
 													<div class="[##_rp_rep_class_##] my-6">
 														<div class="flex justify-between">
 															<div class="flex">
-																<div
-																	class="w-14 h-14 rounded-full object-cover"
-																>
+																<div class="w-14 h-14">
 																	<img
+																		class="rounded-full object-cover"
 																		src="[##_rp_rep_logo_##]"
 																		alt="rep image"
 																	/>
 																</div>
-																<div>
+																<div class="ml-2">
 																	<span class="block">[##_rp_rep_name_##]</span>
 																	<span class="block text-gray-400">
 																		[##_rp_rep_date_##]</span
@@ -375,8 +399,8 @@
 
 				<!-- 페이징 -->
 				<s_paging>
-					<div class="paging">
-						<a [##_prev_page_##] class="[##_no_more_prev_##]">◀ PREV </a>
+					<div class="w-full flex justify-center items-center">
+						<a [##_prev_page_##] class="[##_no_more_prev_##] pr-2">◀ PREV </a>
 						<span class="numbox">
 							<s_paging_rep>
 								<a [##_paging_rep_link_##] class="num"
@@ -384,7 +408,7 @@
 								</a>
 							</s_paging_rep>
 						</span>
-						<a [##_next_page_##] class="[##_no_more_next_##]">NEXT ▶</a>
+						<a [##_next_page_##] class="[##_no_more_next_##] pl-2">NEXT ▶</a>
 					</div>
 				</s_paging>
 				<!-- //페이징 -->
@@ -392,9 +416,11 @@
 		</div>
 
 		<!-- Footer -->
-		<footer id="footer" class="footer">
-			<p>Copyright <a href="[##_blogger_##]">[##_title_##]</a></p>
-			<p>Designed by <a href="" target="_blank">Plutos</a></p>
+		<footer id="footer" class="h-12 flex items-center">
+			<p class="ml-4">
+				Copyright © <a href="[##_blogger_##]">[##_title_##]</a>
+			</p>
+			<p class="ml-2">Designed by <a href="" target="_blank">Plutos</a></p>
 		</footer>
 		<!-- //Footer -->
 	</s_t3>
