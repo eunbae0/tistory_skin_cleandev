@@ -18,5 +18,8 @@
   "homepage": "https://github.com/eunbae11/tistory_skin_cleandev#readme",
   "devDependencies": {
     "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2"
   }
 }
