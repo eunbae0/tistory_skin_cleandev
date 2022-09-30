@@ -1,117 +1,119 @@
-<head>
-	<meta charset="UTF-8" />
-	<meta
-		name="viewport"
-		content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
-	/>
-	<title>[##_page_title_##]</title>
-	<link
-		rel="alternate"
-		type="application/rss+xml"
-		title="[##_title_##]"
-		href="[##_rss_url_##]"
-	/>
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+		/>
+		<title>[##_page_title_##]</title>
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="[##_title_##]"
+			href="[##_rss_url_##]"
+		/>
 
-	<link rel="stylesheet" href="./style.css" />
-</head>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
 
-<body class="relative">
-	<s_t3>
-		<aside
-			id="sidebar"
-			class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 bg-white z-50 hidden"
-		>
-			<button
-				class="absolute top-4 right-4 cursor-pointer"
-				onclick="{closeSidebar()}"
+	<body class="relative">
+		<s_t3>
+			<aside
+				id="sidebar"
+				class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 bg-white z-50 hidden"
 			>
-				<svg
-					class="h-[24px]"
-					focusable="false"
-					aria-hidden="true"
-					viewBox="0 0 24 24"
-					data-testid="CloseIcon"
-					aria-label="fontSize medium"
+				<button
+					class="absolute top-4 right-4 cursor-pointer"
+					onclick="{closeSidebar()}"
 				>
-					<path
-						d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-					></path>
-				</svg>
-			</button>
-			<div class="mt-64 px-5">
-				<s_sidebar>
-					<s_sidebar_element>
-						<!-- 태그 클라우드 -->
-						<section class="my-8">
-							<h3>Tags</h3>
-							<ul class="flex flex-wrap">
-								<s_random_tags>
-									<li class="hover:grow">
-										<a href="[##_tag_link_##]" class="[##_tag_class_##]">
-											[##_tag_name_##]
-										</a>
-									</li>
-								</s_random_tags>
-							</ul>
-						</section>
-						<!-- //태그 클라우드 -->
-					</s_sidebar_element>
-					<s_sidebar_element>
-						<!-- 방문자수 -->
-						<div class="my-8 flex flex-col text-sm text-left">
-							<span class="py-0.5">Total : [##_count_total_##] </span>
-							<span class="py-0.5">Today : [##_count_today_##]</span>
-							<span class="py-0.5">Yesterday : [##_count_yesterday_##]</span>
-						</div>
-						<!-- //방문자수 -->
-					</s_sidebar_element>
-				</s_sidebar>
-			</div>
-		</aside>
+					<svg
+						class="h-[24px]"
+						focusable="false"
+						aria-hidden="true"
+						viewBox="0 0 24 24"
+						data-testid="CloseIcon"
+						aria-label="fontSize medium"
+					>
+						<path
+							d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+						></path>
+					</svg>
+				</button>
+				<div class="mt-64 px-5">
+					<s_sidebar>
+						<s_sidebar_element>
+							<!-- 태그 클라우드 -->
+							<section class="my-8">
+								<h3>Tags</h3>
+								<ul class="flex flex-wrap">
+									<s_random_tags>
+										<li class="hover:grow">
+											<a href="[##_tag_link_##]" class="[##_tag_class_##]">
+												[##_tag_name_##]
+											</a>
+										</li>
+									</s_random_tags>
+								</ul>
+							</section>
+							<!-- //태그 클라우드 -->
+						</s_sidebar_element>
+						<s_sidebar_element>
+							<!-- 방문자수 -->
+							<div class="my-8 flex flex-col text-sm text-left">
+								<span class="py-0.5">Total : [##_count_total_##] </span>
+								<span class="py-0.5">Today : [##_count_today_##]</span>
+								<span class="py-0.5">Yesterday : [##_count_yesterday_##]</span>
+							</div>
+							<!-- //방문자수 -->
+						</s_sidebar_element>
+					</s_sidebar>
+				</div>
+			</aside>
 
-		<!-- Header -->
-		<header
-			role="header"
-			class="p-8 w-full h-30 flex justify-between items-center relative"
-		>
-			<button class="px-3" onclick="{openSidebar()}">
-				<svg
-					class="h-[24px]"
-					focusable="false"
-					aria-hidden="true"
-					viewBox="0 0 24 24"
-					data-testid="MenuIcon"
-					aria-label="fontSize medium"
-				>
-					<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-				</svg>
-			</button>
-			<h1
-				class="absolute top-[calc(108px_/_2)] left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
+			<!-- Header -->
+			<header
+				role="header"
+				class="p-8 w-full h-30 flex justify-between items-center relative"
 			>
-				<a href="[##_blog_link_##]">[##_title_##]</a>
-			</h1>
-			<div class="flex">
-				<div class="버튼동작수정">
-					<s_search>
-						<button
-							class="rounded-full border-2 p-2 mr-6 cursor-pointer"
-							onclick="[##_search_onclick_submit_##]"
-						>
-							<svg
-								class="h-[24px]"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="black"
+				<button class="px-3" onclick="{openSidebar()}">
+					<svg
+						class="h-[24px]"
+						focusable="false"
+						aria-hidden="true"
+						viewBox="0 0 24 24"
+						data-testid="MenuIcon"
+						aria-label="fontSize medium"
+					>
+						<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+					</svg>
+				</button>
+				<h1
+					class="absolute top-[calc(108px_/_2)] left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
+				>
+					<a href="[##_blog_link_##]">[##_title_##]</a>
+				</h1>
+				<div class="flex">
+					<div class="버튼동작수정">
+						<s_search>
+							<button
+								class="rounded-full border-2 p-2 mr-6 cursor-pointer"
+								onclick="[##_search_onclick_submit_##]"
 							>
-								<path
-									stroke-width=".1%"
-									class="fill-black"
-									d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-								></path>
-							</svg>
-						</button>
-						<!-- <input
+								<svg
+									class="h-[24px]"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="black"
+								>
+									<path
+										stroke-width=".1%"
+										class="fill-black"
+										d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+									></path>
+								</svg>
+							</button>
+							<!-- <input
 							class="w-40 h-11 px-2 mr-6 rounded-full border-2 outline-none"
 							type="text"
 							name="[##_search_name_##]"
@@ -119,386 +121,391 @@
 							placeholder="search"
 							onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"
 						/> -->
-					</s_search>
-				</div>
-				<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
-					<a href="[##_blog_link_##]/manage/post">
-						<svg
-							class="h-[24px]"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="black"
-						>
-							<path
-								stroke-width="1.5"
-								d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-							></path>
-						</svg>
-					</a>
-				</div>
-				<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
-					<a href="[##_blog_link_##]/manage/">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-[24px] dark:text-white"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="black"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-							></path>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-							></path>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</header>
-		<div class="w-full min-h-full relative">
-			<div class="absolute left-[calc(41.666666%_/_4)] top-52 -translate-x-1/2">
-				<s_sidebar>
-					<s_sidebar_element>
-						<!-- 카테고리 -->
-						<section id="category" class="w-40">
-							<h5 class="text-center pb-2 border-b w-full">CATEGORY</h5>
-							[##_category_list_##]
-						</section>
-					</s_sidebar_element>
-				</s_sidebar>
-			</div>
-
-			<main role="main" class="w-7/12 mx-auto my-0">
-				<!-- 블로거 정보 -->
-				<section role="banner">
-					<div class="flex justify-between my-4 items-center">
-						<div class="flex">
-							<div class="flex justify-center items-center">
-								<img
-									class="w-40 h-40 rounded-full object-cover"
-									src="[##_image_##]"
-									alt="profile image"
-								/>
-							</div>
-							<div class="flex flex-col justify-center ml-4">
-								<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
-								<p class="py-2">[##_desc_##]</p>
-							</div>
-						</div>
-						<ul class="w-20">
-							<s_if_var_github_link>
-								<li>
-									<a href="[##_var_github_link_##]" target="_blank">
-										<svg
-											class="h-[24px]"
-											focusable="false"
-											aria-hidden="true"
-											viewBox="0 0 24 24"
-											data-testid="GitHubIcon"
-											aria-label="fontSize large"
-										>
-											<path
-												d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
-											></path>
-										</svg>
-									</a>
-								</li>
-							</s_if_var_github_link>
-						</ul>
+						</s_search>
 					</div>
-				</section>
-				<!-- //블로거 정보 -->
-				<!-- 본문 -->
-				<s_article_rep>
-					<!-- 인덱스 페이지 -->
-					<s_index_article_rep>
-						<div class="h-64 px-5 py-7 flex justify-between items-center">
-							<div
-								class="h-full w-[calc(100%_-_13rem)] flex flex-col justify-between"
+					<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
+						<a href="[##_blog_link_##]/manage/post">
+							<svg
+								class="h-[24px]"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="black"
 							>
-								<a href="[##_article_rep_link_##]">
-									<h2 class="font-bold text-4xl pr-10">
-										[##_article_rep_title_##]
-									</h2>
-								</a>
-								<p
-									class="h-18 my-2 pr-10 text-ellipsis line-clamp-3 leading-normal align-left text-base"
-								>
-									[##_article_rep_summary_##]
-								</p>
-								<p class="text-sm text-gray-500">
-									<a href="[##_article_rep_category_link_##]">
-										[##_article_rep_category_##]
-									</a>
-									|
-									<span>[##_article_rep_date_##]</span>
-								</p>
-							</div>
-							<div onclick="window.location='[##_article_rep_link_##]'">
-								<s_article_rep_thumbnail>
+								<path
+									stroke-width="1.5"
+									d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+								></path>
+							</svg>
+						</a>
+					</div>
+					<div class="rounded-full border-2 p-2 mr-6 cursor-pointer">
+						<a href="[##_blog_link_##]/manage/">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-[24px] dark:text-white"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="black"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1.5"
+									d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+								></path>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1.5"
+									d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+								></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</header>
+			<div class="w-full min-h-full relative">
+				<div
+					class="absolute left-[calc(41.666666%_/_4)] top-52 -translate-x-1/2"
+				>
+					<s_sidebar>
+						<s_sidebar_element>
+							<!-- 카테고리 -->
+							<section id="category" class="w-40">
+								<h5 class="text-center pb-2 border-b w-full">CATEGORY</h5>
+								[##_category_list_##]
+							</section>
+						</s_sidebar_element>
+					</s_sidebar>
+				</div>
+
+				<main role="main" class="w-7/12 mx-auto my-0">
+					<!-- 블로거 정보 -->
+					<section role="banner">
+						<div class="flex justify-between my-4 items-center">
+							<div class="flex">
+								<div class="flex justify-center items-center">
 									<img
-										src="[##_article_rep_thumbnail_url_##]"
-										alt="Article Thumbnail"
-										class="h-52 w-52 rounded-2xl object-cover"
+										class="w-40 h-40 rounded-full object-cover"
+										src="[##_image_##]"
+										alt="profile image"
 									/>
-								</s_article_rep_thumbnail>
+								</div>
+								<div class="flex flex-col justify-center ml-4">
+									<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
+									<p class="py-2">[##_desc_##]</p>
+								</div>
 							</div>
+							<ul class="w-20">
+								<s_if_var_github_link>
+									<li>
+										<a href="[##_var_github_link_##]" target="_blank">
+											<svg
+												class="h-[24px]"
+												focusable="false"
+												aria-hidden="true"
+												viewBox="0 0 24 24"
+												data-testid="GitHubIcon"
+												aria-label="fontSize large"
+											>
+												<path
+													d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
+												></path>
+											</svg>
+										</a>
+									</li>
+								</s_if_var_github_link>
+							</ul>
 						</div>
-					</s_index_article_rep>
-					<!-- //인덱스 페이지 -->
-					<!-- 퍼머링크 페이지-->
-					<s_permalink_article_rep>
-						<div class="">
-							<div class="my-14">
-								<h1 class="font-bold text-5xl mb-6">
-									[##_article_rep_title_##]
-								</h1>
-								<div class="flex justify-between">
-									<div class="flex">
-										<!-- <a href="[##_article_rep_category_link_##]">
+					</section>
+					<!-- //블로거 정보 -->
+					<!-- 본문 -->
+					<s_article_rep>
+						<!-- 인덱스 페이지 -->
+						<s_index_article_rep>
+							<div class="h-64 px-5 py-7 flex justify-between items-center">
+								<div
+									class="h-full w-[calc(100%_-_13rem)] flex flex-col justify-between"
+								>
+									<a href="[##_article_rep_link_##]">
+										<h2 class="font-bold text-4xl pr-10">
+											[##_article_rep_title_##]
+										</h2>
+									</a>
+									<p
+										class="h-18 my-2 pr-10 text-ellipsis line-clamp-3 leading-normal align-left text-base"
+									>
+										[##_article_rep_summary_##]
+									</p>
+									<p class="text-sm text-gray-500">
+										<a href="[##_article_rep_category_link_##]">
+											[##_article_rep_category_##]
+										</a>
+										|
+										<span>[##_article_rep_date_##]</span>
+									</p>
+								</div>
+								<div onclick="window.location='[##_article_rep_link_##]'">
+									<s_article_rep_thumbnail>
+										<img
+											src="[##_article_rep_thumbnail_url_##]"
+											alt="Article Thumbnail"
+											class="h-52 w-52 rounded-2xl object-cover"
+										/>
+									</s_article_rep_thumbnail>
+								</div>
+							</div>
+						</s_index_article_rep>
+						<!-- //인덱스 페이지 -->
+						<!-- 퍼머링크 페이지-->
+						<s_permalink_article_rep>
+							<div class="">
+								<div class="my-14">
+									<h1 class="font-bold text-5xl mb-6">
+										[##_article_rep_title_##]
+									</h1>
+									<div class="flex justify-between">
+										<div class="flex">
+											<!-- <a href="[##_article_rep_category_link_##]">
                       [##_article_rep_category_##]
                     </a> -->
-										<span class="mr-2">[##_blogger_##]</span>
-										<span class="date">[##_article_rep_date_##]</span>
-									</div>
-									<s_ad_div>
-										<div class="flex">
-											<a href="[##_s_ad_m_link_##]">수정</a>
-											<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+											<span class="mr-2">[##_blogger_##]</span>
+											<span class="date">[##_article_rep_date_##]</span>
 										</div>
-									</s_ad_div>
-								</div>
-							</div>
-							<div class="article_content">[##_article_rep_desc_##]</div>
-						</div>
-
-						<!-- 블로거 정보 -->
-						<section role="banner">
-							<div class="flex justify-between my-4 items-center">
-								<div class="flex">
-									<div class="flex justify-center items-center">
-										<img
-											class="w-40 h-40 rounded-full object-cover"
-											src="[##_image_##]"
-											alt="profile image"
-										/>
-									</div>
-									<div class="flex flex-col justify-center ml-4">
-										<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
-										<p class="py-2">[##_desc_##]</p>
+										<s_ad_div>
+											<div class="flex">
+												<a href="[##_s_ad_m_link_##]">수정</a>
+												<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+											</div>
+										</s_ad_div>
 									</div>
 								</div>
-								<ul class="w-20">
-									<s_if_var_github_link>
-										<li>
-											<a href="[##_var_github_link_##]" target="_blank">
-												<svg
-													class="h-[24px]"
-													focusable="false"
-													aria-hidden="true"
-													viewBox="0 0 24 24"
-													data-testid="GitHubIcon"
-													aria-label="fontSize large"
-												>
-													<path
-														d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
-													></path>
-												</svg>
-											</a>
-										</li>
-									</s_if_var_github_link>
-								</ul>
+								<div class="article_content">[##_article_rep_desc_##]</div>
 							</div>
-						</section>
-						<!-- //블로거 정보 -->
 
-						<!-- 댓글 -->
-						<s_rp>
-							<div class="comment_wrapper">
-								<s_rp_input_form>
-									<div class="my-2">
-										<p>
-											<textarea
-												name="[##_rp_input_comment_##]"
-												class="border border-gray-400 rounded-md w-full h-20 my-2 px-4 py-2 outline-none resize-none"
-												rows="10"
-												cols="50"
-											></textarea>
-										</p>
-										<div class="flex justify-between">
-											<s_rp_member>
-												<div class="flex justify-between items-center w-full">
-													<s_rp_guest>
-														<div class="flex">
-															<input
-																type="text"
-																name="[##_rp_input_name_##]"
-																value="[##_guest_name_##]"
-																placeholder="username"
-																class="outline-none px-0.5"
-															/>
-															<input
-																type="password"
-																maxlength="8"
-																name="[##_rp_input_password_##]"
-																value="[##_rp_admin_check_##]"
-																placeholder="password"
-																class="outline-none px-0.5"
-															/>
-														</div>
-													</s_rp_guest>
-													<p class="mr-2 ml-auto">
-														<input
-															type="checkbox"
-															name="[##_rp_input_is_secret_##]"
-															class="checkbox"
-														/>
-														<span>비밀 글</span>
-													</p>
-												</div>
-											</s_rp_member>
-											<button
-												type="submit"
-												class="w-20 h-10 bg-lime-200 rounded-md ml-auto"
-												onclick="[##_rp_onclick_submit_##]"
-											>
-												댓글 작성
-											</button>
+							<!-- 블로거 정보 -->
+							<section role="banner">
+								<div class="flex justify-between my-4 items-center">
+									<div class="flex">
+										<div class="flex justify-center items-center">
+											<img
+												class="w-40 h-40 rounded-full object-cover"
+												src="[##_image_##]"
+												alt="profile image"
+											/>
+										</div>
+										<div class="flex flex-col justify-center ml-4">
+											<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
+											<p class="py-2">[##_desc_##]</p>
 										</div>
 									</div>
-								</s_rp_input_form>
+									<ul class="w-20">
+										<s_if_var_github_link>
+											<li>
+												<a href="[##_var_github_link_##]" target="_blank">
+													<svg
+														class="h-[24px]"
+														focusable="false"
+														aria-hidden="true"
+														viewBox="0 0 24 24"
+														data-testid="GitHubIcon"
+														aria-label="fontSize large"
+													>
+														<path
+															d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
+														></path>
+													</svg>
+												</a>
+											</li>
+										</s_if_var_github_link>
+									</ul>
+								</div>
+							</section>
+							<!-- //블로거 정보 -->
 
-								<!-- 댓글 폼 -->
-								<div class="">
-									<s_rp_container>
-										<ol>
-											<s_rp_rep>
-												<li id="[##_rp_rep_id_##]">
-													<div class="[##_rp_rep_class_##] my-6">
-														<div class="flex justify-between">
+							<!-- 댓글 -->
+							<s_rp>
+								<div class="comment_wrapper">
+									<s_rp_input_form>
+										<div class="my-2">
+											<p>
+												<textarea
+													name="[##_rp_input_comment_##]"
+													class="border border-gray-400 rounded-md w-full h-20 my-2 px-4 py-2 outline-none resize-none"
+													rows="10"
+													cols="50"
+												></textarea>
+											</p>
+											<div class="flex justify-between">
+												<s_rp_member>
+													<div class="flex justify-between items-center w-full">
+														<s_rp_guest>
 															<div class="flex">
-																<div class="w-14 h-14">
-																	<img
-																		class="rounded-full object-cover"
-																		src="[##_rp_rep_logo_##]"
-																		alt="rep image"
-																	/>
-																</div>
-																<div class="ml-2">
-																	<span class="block">[##_rp_rep_name_##]</span>
-																	<span class="block text-gray-400">
-																		[##_rp_rep_date_##]</span
-																	>
-																</div>
+																<input
+																	type="text"
+																	name="[##_rp_input_name_##]"
+																	value="[##_guest_name_##]"
+																	placeholder="username"
+																	class="outline-none px-0.5"
+																/>
+																<input
+																	type="password"
+																	maxlength="8"
+																	name="[##_rp_input_password_##]"
+																	value="[##_rp_admin_check_##]"
+																	placeholder="password"
+																	class="outline-none px-0.5"
+																/>
 															</div>
-															<span class="flex">
-																<a
-																	href="#"
-																	onclick="[##_rp_rep_onclick_delete_##]"
-																	class="mx-2"
-																	>&nbsp;
-																	<span>수정/삭제</span>
-																</a>
-																<a
-																	href="#"
-																	onclick="[##_rp_rep_onclick_reply_##]"
-																	class=""
-																	>&nbsp;
-																	<span>답글 달기</span>
-																</a>
-															</span>
-														</div>
-														<p class="py-6">[##_rp_rep_desc_##]</p>
+														</s_rp_guest>
+														<p class="mr-2 ml-auto">
+															<input
+																type="checkbox"
+																name="[##_rp_input_is_secret_##]"
+																class="checkbox"
+															/>
+															<span>비밀 글</span>
+														</p>
 													</div>
-													<!-- 대댓글 -->
-													<s_rp2_container>
-														<ul>
-															<s_rp2_rep>
-																<li id="[##_rp_rep_id_##]">
-																	<div class="[##_rp_rep_class_##] pl-4 my-6">
-																		<div class="flex justify-between">
-																			<div class="flex">
-																				<div
-																					class="w-14 h-14 rounded-full object-cover"
-																				>
-																					<img
-																						src="[##_rp_rep_logo_##]"
-																						alt="rep image"
-																					/>
-																				</div>
-																				<div>
-																					<span class="block"
-																						>[##_rp_rep_name_##]</span
-																					>
-																					<span class="block text-gray-400"
-																						>[##_rp_rep_date_##]</span
-																					>
-																				</div>
-																			</div>
-																			<span class="flex">
-																				<a
-																					href="#"
-																					onclick="[##_rp_rep_onclick_delete_##]"
-																					class="modify"
-																					>&nbsp;
-																					<span>수정/삭제</span>
-																				</a>
-																			</span>
-																		</div>
-																		<p class="py-6">[##_rp_rep_desc_##]</p>
+												</s_rp_member>
+												<button
+													type="submit"
+													class="w-20 h-10 bg-lime-200 rounded-md ml-auto"
+													onclick="[##_rp_onclick_submit_##]"
+												>
+													댓글 작성
+												</button>
+											</div>
+										</div>
+									</s_rp_input_form>
+
+									<!-- 댓글 폼 -->
+									<div class="">
+										<s_rp_container>
+											<ol>
+												<s_rp_rep>
+													<li id="[##_rp_rep_id_##]">
+														<div class="[##_rp_rep_class_##] my-6">
+															<div class="flex justify-between">
+																<div class="flex">
+																	<div class="w-14 h-14">
+																		<img
+																			class="rounded-full object-cover"
+																			src="[##_rp_rep_logo_##]"
+																			alt="rep image"
+																		/>
 																	</div>
-																</li>
-															</s_rp2_rep>
-														</ul>
-													</s_rp2_container>
-													<!-- //대댓글 -->
-												</li>
-											</s_rp_rep>
-										</ol>
-									</s_rp_container>
+																	<div class="ml-2">
+																		<span class="block"
+																			>[##_rp_rep_name_##]</span
+																		>
+																		<span class="block text-gray-400">
+																			[##_rp_rep_date_##]</span
+																		>
+																	</div>
+																</div>
+																<span class="flex">
+																	<a
+																		href="#"
+																		onclick="[##_rp_rep_onclick_delete_##]"
+																		class="mx-2"
+																		>&nbsp;
+																		<span>수정/삭제</span>
+																	</a>
+																	<a
+																		href="#"
+																		onclick="[##_rp_rep_onclick_reply_##]"
+																		class=""
+																		>&nbsp;
+																		<span>답글 달기</span>
+																	</a>
+																</span>
+															</div>
+															<p class="py-6">[##_rp_rep_desc_##]</p>
+														</div>
+														<!-- 대댓글 -->
+														<s_rp2_container>
+															<ul>
+																<s_rp2_rep>
+																	<li id="[##_rp_rep_id_##]">
+																		<div class="[##_rp_rep_class_##] pl-4 my-6">
+																			<div class="flex justify-between">
+																				<div class="flex">
+																					<div
+																						class="w-14 h-14 rounded-full object-cover"
+																					>
+																						<img
+																							src="[##_rp_rep_logo_##]"
+																							alt="rep image"
+																						/>
+																					</div>
+																					<div>
+																						<span class="block"
+																							>[##_rp_rep_name_##]</span
+																						>
+																						<span class="block text-gray-400"
+																							>[##_rp_rep_date_##]</span
+																						>
+																					</div>
+																				</div>
+																				<span class="flex">
+																					<a
+																						href="#"
+																						onclick="[##_rp_rep_onclick_delete_##]"
+																						class="modify"
+																						>&nbsp;
+																						<span>수정/삭제</span>
+																					</a>
+																				</span>
+																			</div>
+																			<p class="py-6">[##_rp_rep_desc_##]</p>
+																		</div>
+																	</li>
+																</s_rp2_rep>
+															</ul>
+														</s_rp2_container>
+														<!-- //대댓글 -->
+													</li>
+												</s_rp_rep>
+											</ol>
+										</s_rp_container>
+									</div>
+									<!-- //댓글 폼 -->
 								</div>
-								<!-- //댓글 폼 -->
-							</div>
-						</s_rp>
-						<!-- //댓글 -->
-					</s_permalink_article_rep>
-					<!-- //퍼머링크 페이지-->
-				</s_article_rep>
-				<!-- //본문 -->
+							</s_rp>
+							<!-- //댓글 -->
+						</s_permalink_article_rep>
+						<!-- //퍼머링크 페이지-->
+					</s_article_rep>
+					<!-- //본문 -->
 
-				<!-- 페이징 -->
-				<s_paging>
-					<div class="w-full flex justify-center items-center">
-						<a [##_prev_page_##] class="[##_no_more_prev_##] pr-2">◀ PREV </a>
-						<span class="numbox">
-							<s_paging_rep>
-								<a [##_paging_rep_link_##] class="num"
-									>[[##_paging_rep_link_num_##]]
-								</a>
-							</s_paging_rep>
-						</span>
-						<a [##_next_page_##] class="[##_no_more_next_##] pl-2">NEXT ▶</a>
-					</div>
-				</s_paging>
-				<!-- //페이징 -->
-			</main>
-		</div>
+					<!-- 페이징 -->
+					<s_paging>
+						<div class="w-full flex justify-center items-center">
+							<a [##_prev_page_##] class="[##_no_more_prev_##] pr-2">◀ PREV </a>
+							<span class="numbox">
+								<s_paging_rep>
+									<a [##_paging_rep_link_##] class="num"
+										>[[##_paging_rep_link_num_##]]
+									</a>
+								</s_paging_rep>
+							</span>
+							<a [##_next_page_##] class="[##_no_more_next_##] pl-2">NEXT ▶</a>
+						</div>
+					</s_paging>
+					<!-- //페이징 -->
+				</main>
+			</div>
 
-		<!-- Footer -->
-		<footer id="footer" class="h-12 flex items-center">
-			<p class="ml-4">
-				Copyright © <a href="[##_blogger_##]">[##_title_##]</a>
-			</p>
-			<p class="ml-2">Designed by <a href="" target="_blank">Plutos</a></p>
-		</footer>
-		<!-- //Footer -->
-	</s_t3>
-</body>
-<script src="./images/script.js"></script>
+			<!-- Footer -->
+			<footer id="footer" class="h-12 flex items-center">
+				<p class="ml-4">
+					Copyright © <a href="[##_blogger_##]">[##_title_##]</a>
+				</p>
+				<p class="ml-2">Designed by <a href="" target="_blank">Plutos</a></p>
+			</footer>
+			<!-- //Footer -->
+		</s_t3>
+	</body>
+	<script src="./images/script.js"></script>
+</html>
