@@ -15,23 +15,77 @@
 	<link rel="stylesheet" href="./style.css" />
 </head>
 
-<body>
+<body class="relative">
 	<s_t3>
+		<aside
+			id="sidebar"
+			class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 bg-white z-50 hidden"
+		>
+			<button
+				class="absolute top-4 right-4 cursor-pointer"
+				onclick="{closeSidebar()}"
+			>
+				<svg
+					class="h-[24px]"
+					focusable="false"
+					aria-hidden="true"
+					viewBox="0 0 24 24"
+					data-testid="CloseIcon"
+					aria-label="fontSize medium"
+				>
+					<path
+						d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+					></path>
+				</svg>
+			</button>
+			<div class="mt-64 px-5">
+				<s_sidebar>
+					<s_sidebar_element>
+						<!-- 태그 클라우드 -->
+						<section class="my-8">
+							<h3>Tags</h3>
+							<ul class="flex flex-wrap">
+								<s_random_tags>
+									<li class="hover:grow">
+										<a href="[##_tag_link_##]" class="[##_tag_class_##]">
+											[##_tag_name_##]
+										</a>
+									</li>
+								</s_random_tags>
+							</ul>
+						</section>
+						<!-- //태그 클라우드 -->
+					</s_sidebar_element>
+					<s_sidebar_element>
+						<!-- 방문자수 -->
+						<div class="my-8 flex flex-col text-sm text-left">
+							<span class="py-0.5">Total : [##_count_total_##] </span>
+							<span class="py-0.5">Today : [##_count_today_##]</span>
+							<span class="py-0.5">Yesterday : [##_count_yesterday_##]</span>
+						</div>
+						<!-- //방문자수 -->
+					</s_sidebar_element>
+				</s_sidebar>
+			</div>
+		</aside>
+
 		<!-- Header -->
 		<header
 			role="header"
 			class="p-8 w-full h-30 flex justify-between items-center relative"
 		>
-			<svg
-				class="h-[24px] px-3 cursor-pointer"
-				focusable="false"
-				aria-hidden="true"
-				viewBox="0 0 24 24"
-				data-testid="MenuIcon"
-				aria-label="fontSize medium"
-			>
-				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-			</svg>
+			<button class="px-3" onclick="{openSidebar()}">
+				<svg
+					class="h-[24px]"
+					focusable="false"
+					aria-hidden="true"
+					viewBox="0 0 24 24"
+					data-testid="MenuIcon"
+					aria-label="fontSize medium"
+				>
+					<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+				</svg>
+			</button>
 			<h1
 				class="absolute top-[calc(108px_/_2)] left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
 			>
@@ -124,7 +178,7 @@
 			<main role="main" class="w-7/12 mx-auto my-0">
 				<!-- 블로거 정보 -->
 				<section role="banner">
-					<div class="flex justify-between my-4">
+					<div class="flex justify-between my-4 items-center">
 						<div class="flex">
 							<div class="flex justify-center items-center">
 								<img
@@ -141,9 +195,20 @@
 						<ul class="w-20">
 							<s_if_var_github_link>
 								<li>
-									<a href="[##_var_{github_link}_##]" target="_blank"
-										>깃허브 이미지</a
-									>
+									<a href="[##_var_github_link_##]" target="_blank">
+										<svg
+											class="h-[24px]"
+											focusable="false"
+											aria-hidden="true"
+											viewBox="0 0 24 24"
+											data-testid="GitHubIcon"
+											aria-label="fontSize large"
+										>
+											<path
+												d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
+											></path>
+										</svg>
+									</a>
 								</li>
 							</s_if_var_github_link>
 						</ul>
@@ -216,7 +281,7 @@
 
 						<!-- 블로거 정보 -->
 						<section role="banner">
-							<div class="flex justify-between">
+							<div class="flex justify-between my-4 items-center">
 								<div class="flex">
 									<div class="flex justify-center items-center">
 										<img
@@ -233,9 +298,20 @@
 								<ul class="w-20">
 									<s_if_var_github_link>
 										<li>
-											<a href="[##_var_{github_link}_##]" target="_blank"
-												>깃허브 이미지</a
-											>
+											<a href="[##_var_github_link_##]" target="_blank">
+												<svg
+													class="h-[24px]"
+													focusable="false"
+													aria-hidden="true"
+													viewBox="0 0 24 24"
+													data-testid="GitHubIcon"
+													aria-label="fontSize large"
+												>
+													<path
+														d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
+													></path>
+												</svg>
+											</a>
 										</li>
 									</s_if_var_github_link>
 								</ul>
@@ -425,3 +501,4 @@
 		<!-- //Footer -->
 	</s_t3>
 </body>
+<script src="./images/script.js"></script>
