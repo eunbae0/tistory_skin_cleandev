@@ -509,16 +509,42 @@
 
 					<!-- 페이징 -->
 					<s_paging>
-						<div class="w-full flex justify-center items-center">
-							<a [##_prev_page_##] class="[##_no_more_prev_##] pr-2">◀ PREV </a>
-							<span class="numbox">
+						<div class="w-full flex justify-center items-center my-3.5">
+							<a [##_prev_page_##] class="[##_no_more_prev_##] pr-2">
+								<svg
+									class="h-[20px]"
+									focusable="false"
+									aria-hidden="true"
+									viewBox="0 0 24 24"
+									aria-label="fontSize small"
+								>
+									<path
+										d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+									></path>
+								</svg>
+							</a>
+							<span class="">
 								<s_paging_rep>
-									<a [##_paging_rep_link_##] class="num"
-										>[[##_paging_rep_link_num_##]]
+									<a
+										[##_paging_rep_link_##]
+										class="mx-2 px-3 py-2 w-8 h-8 rounded-full border-2"
+										>[##_paging_rep_link_num_##]
 									</a>
 								</s_paging_rep>
 							</span>
-							<a [##_next_page_##] class="[##_no_more_next_##] pl-2">NEXT ▶</a>
+							<a [##_next_page_##] class="[##_no_more_next_##] pl-2">
+								<svg
+									class="h-[20px]"
+									focusable="false"
+									aria-hidden="true"
+									viewBox="0 0 24 24"
+									aria-label="fontSize small"
+								>
+									<path
+										d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+									></path>
+								</svg>
+							</a>
 						</div>
 					</s_paging>
 					<!-- //페이징 -->
