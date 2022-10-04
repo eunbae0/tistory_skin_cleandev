@@ -47,3 +47,16 @@ function onClickSettingBtn() {
   const hostname = window.location.hostname;
   window.location = hostname + "/manage";
 }
+
+// toc
+const toc = document.getElementById("toc");
+const headers = document.querySelectorAll("h2, h3, h4");
+for (const header of headers) {
+  const title = header.textContent;
+  const newHTML = `
+  <li>
+    <a href="#">${title}</a>
+  </li>
+  `;
+  toc.innerHTML = newHTML;
+}
