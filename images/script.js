@@ -1,7 +1,7 @@
 const mainBanner = document.getElementById("main_banner");
-if (window.location.pathname !== "/" || window.location.pathname !== "/category") {
+const pathnameSecond = window.location.pathname.split('/');
+if (pathnameSecond[1]!== "" && !pathnameSecond.includes('category')) {
   mainBanner.classList.add("hidden");
-  return;
 }
 
 const codeBlocks = document.getElementsByClassName("hljs");
@@ -14,20 +14,19 @@ const codeTopBar = `
 `;
 
 console.log(codeBlocks.length);
-console.log('hi');
-for(const codeBlock of codeWrappers) {
+for(const codeBlock of codeBlocks) {
   const codes = codeBlock.innerHTML;
   codeBlock.innerHTML = codeTopBar + codes;
 }
 
 const sidebar = document.getElementById("sidebar");
 function openSidebar() {
-  sidebar.classList.remove('-translate-x-80');
+  sidebar.classList.remove('-translate-x-[100%]');
   sidebar.classList.add('translate-x-0');
 }
 function closeSidebar() {
   sidebar.classList.remove('translate-x-0');
-  sidebar.classList.add('-translate-x-80');
+  sidebar.classList.add('-translate-x-[100%]');
 }
 
 // const searchBtn = document.getElementById("searchBtn");
@@ -40,23 +39,26 @@ function closeSidebar() {
 
 function onClickWriteBtn() {
   const hostname = window.location.hostname;
-  window.location = hostname + "/manage/post";
+  window.location = "https://" + hostname + "/manage/post";
 }
 
 function onClickSettingBtn() {
   const hostname = window.location.hostname;
-  window.location = hostname + "/manage";
+  window.location = "https://" + hostname + "/manage";
 }
 
 // toc
 const toc = document.getElementById("toc");
-const headers = document.querySelectorAll("h2, h3, h4");
+const headers = document.querySelectorAll(".article_content h2, .article_content h3, .article_content h4");
+
+let newHTML = "";
 for (const header of headers) {
   const title = header.textContent;
-  const newHTML = `
-  <li>
+  const tocListHTML = `
+  <li class="py-1">
     <a href="#">${title}</a>
   </li>
   `;
-  toc.innerHTML = newHTML;
+  newHTML += tocListHTML;
 }
+toc.innerHTML = newHTML;
