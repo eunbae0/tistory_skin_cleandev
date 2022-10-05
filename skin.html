@@ -40,18 +40,30 @@
 						></path>
 					</svg>
 				</button>
-				<div class="mt-64 px-5">
+				<div class="mt-20 px-5">
 					<s_sidebar>
+						<s_sidebar_element>
+							<!-- 방문자수 -->
+							<div class="my-8 flex flex-col text-sm text-left">
+								<h3 class="py-2 mb-4 border-b border-gray-500 w-full">
+									Visitors
+								</h3>
+								<span class="py-0.5">Total : [##_count_total_##] </span>
+								<span class="py-0.5">Today : [##_count_today_##]</span>
+								<span class="py-0.5">Yesterday : [##_count_yesterday_##]</span>
+							</div>
+							<!-- //방문자수 -->
+						</s_sidebar_element>
 						<s_sidebar_element>
 							<!-- 태그 클라우드 -->
 							<section class="my-8">
-								<h3>Tags</h3>
+								<h3 class="py-2 mb-4 border-b border-gray-500 w-full">Tags</h3>
 								<ul class="flex flex-wrap text-sm">
 									<s_random_tags>
 										<li
-											class="hover:grow px-1 rounded-full bg-slate-50 text-center"
+											class="m-1 px-2 py-1 border border-gray-900 rounded-full bg-slate-50 text-center hover:bg-gray-900 hover:text-white"
 										>
-											<a href="[##_tag_link_##]" class="[##_tag_class_##]">
+											<a href="[##_tag_link_##]" class="[##_tag_class_##] pt-1">
 												[##_tag_name_##]
 											</a>
 										</li>
@@ -61,13 +73,67 @@
 							<!-- //태그 클라우드 -->
 						</s_sidebar_element>
 						<s_sidebar_element>
-							<!-- 방문자수 -->
-							<div class="my-8 flex flex-col text-sm text-left">
-								<span class="py-0.5">Total : [##_count_total_##] </span>
-								<span class="py-0.5">Today : [##_count_today_##]</span>
-								<span class="py-0.5">Yesterday : [##_count_yesterday_##]</span>
-							</div>
-							<!-- //방문자수 -->
+							<!-- 최근에 올라온 글 -->
+							<section class="my-8">
+								<h3 class="py-2 mb-4 border-b border-gray-500 w-full">
+									Recent Post
+								</h3>
+								<ul class="flex flex-col justify-center">
+									<s_rctps_rep>
+										<li
+											class="w-full my-2 p-4 border-[1.5px] border-gray-900 rounded-lg text-sm"
+										>
+											<a
+												href="[##_rctps_rep_link_##]"
+												class="flex justify-between items-center"
+											>
+												<div class="flex flex-col">
+													<h5 class="w-[calc(100% - 64px)]">
+														<span class="truncate"
+															>[##_rctps_rep_title_##]</span
+														>
+													</h5>
+													<span class="text-xs text-gray-400"
+														>[##_rctps_rep_simple_date_##]</span
+													>
+												</div>
+												<s_rctps_rep_thumbnail>
+													<img
+														src="[##_rctps_rep_thumbnail_##]"
+														class="h-16 w-16 rounded-md"
+													/>
+												</s_rctps_rep_thumbnail>
+											</a>
+										</li>
+									</s_rctps_rep>
+								</ul>
+							</section>
+						</s_sidebar_element>
+						<s_sidebar_element>
+							<!-- 최근에 달린 댓글 -->
+							<section class="my-8">
+								<h3 class="py-2 mb-4 border-b border-gray-500 w-full">
+									Recent Comment
+								</h3>
+								<ul id="recentComments">
+									<s_rctrp_rep>
+										<li
+											class="w-full my-2 p-4 border-[1.5px] border-gray-900 rounded-lg text-sm"
+										>
+											<a href="[##_rctrp_rep_link_##]" class="">
+												<div class="flex flex-col">
+													<span class="w-full truncate"
+														>[##_rctrp_rep_desc_##]</span
+													>
+													<span class="text-right pt-1 text-xs text-gray-400"
+														>[##_rctrp_rep_name_##]</span
+													>
+												</div>
+											</a>
+										</li>
+									</s_rctrp_rep>
+								</ul>
+							</section>
 						</s_sidebar_element>
 					</s_sidebar>
 				</div>
