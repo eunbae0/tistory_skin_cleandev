@@ -21,7 +21,7 @@
 		<s_t3>
 			<aside
 				id="sidebar"
-				class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-80 bg-white z-50 transition ease-in-out duration-500"
+				class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 overflow-auto"
 			>
 				<button
 					class="absolute top-4 right-4 cursor-pointer"
@@ -101,7 +101,7 @@
 							<div class="group">
 								<button
 									id="searchBtn"
-									class="rounded-full border-2 p-2 mr-5 cursor-pointer group-hover:hidden"
+									class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer group-hover:hidden"
 									onclick="[##_search_onclick_submit_##]"
 								>
 									<svg
@@ -119,7 +119,7 @@
 
 								<div
 									id="searchInput"
-									class="w-40 h-11 mr-5 rounded-full border-2 relative justify-between items-center hidden group-hover:flex transition-all ease-in-out duration-300 delay-200"
+									class="w-44 h-11 mr-5 rounded-full border-2 border-gray-900 relative justify-between items-center hidden group-hover:flex transition-all ease-in-out duration-300 delay-200"
 								>
 									<input
 										class="w-32 h-full pl-4 pr-2 rounded-full outline-none"
@@ -134,28 +134,30 @@
 										type="button"
 										onclick="[##_search_onclick_submit_##]"
 									/>
-									<svg
-										class="h-[22px] pr-2"
-										focusable="false"
-										aria-hidden="true"
-										viewBox="0 0 24 24"
-										data-testid="SearchIcon"
-										aria-label="fontSize medium"
-									>
-										<path
-											d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-										></path>
-									</svg>
+									<div class="pr-2">
+										<svg
+											class="h-[24px]"
+											focusable="false"
+											aria-hidden="true"
+											viewBox="0 0 24 24"
+											stroke="black"
+										>
+											<path
+												class="fill-black"
+												d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+											></path>
+										</svg>
+									</div>
 								</div>
 							</div>
 						</s_search>
 					</div>
 					<button
-						class="rounded-full border-2 p-2 mr-5 cursor-pointer"
+						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group"
 						onclick="{onClickWriteBtn()}"
 					>
 						<svg
-							class="h-[24px] hover:fill-red-400"
+							class="h-[24px] group-hover:fill-white"
 							focusable="false"
 							aria-hidden="true"
 							viewBox="0 0 24 24"
@@ -168,11 +170,11 @@
 						</svg>
 					</button>
 					<button
-						class="rounded-full border-2 p-2 mr-5 cursor-pointer"
+						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group"
 						onclick="{onClickSettingBtn()}"
 					>
 						<svg
-							class="h-[24px] dark:fill-white2 hover:fill-yellow-400"
+							class="h-[24px] dark:fill-white2 group-hover:fill-white"
 							focusable="false"
 							aria-hidden="true"
 							viewBox="0 0 24 24"
@@ -195,16 +197,18 @@
 						<s_sidebar_element>
 							<!-- 카테고리 -->
 							<section id="category" class="w-40">
-								<h5 class="text-center pb-2 border-b w-full">CATEGORY</h5>
+								<h5 class="text-center pb-2 border-b border-gray-500 w-full">
+									CATEGORY
+								</h5>
 								[##_category_list_##]
 							</section>
 						</s_sidebar_element>
 					</s_sidebar>
 				</div>
 				<section
-					class="absolute right-[calc(41.666666%_/_4)] top-60 translate-x-1/2"
+					class="absolute w-[calc(41.666666%_/_2)] right-[calc(41.666666%_/_4)] top-60 translate-x-1/2"
 				>
-					<ul id="toc"></ul>
+					<ul id="toc" class="px-10 text-sm text-gray-500"></ul>
 				</section>
 
 				<main role="main" class="w-7/12 mx-auto my-0">
@@ -219,7 +223,7 @@
 										alt="profile image"
 									/>
 								</div>
-								<div class="flex flex-col justify-center ml-4">
+								<div class="flex flex-col justify-center ml-6">
 									<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
 									<p class="py-2">[##_desc_##]</p>
 								</div>
@@ -245,6 +249,10 @@
 								</s_if_var_github_link>
 							</ul>
 						</div>
+						<h2 class="w-full mt-11 my-6 py-4 border-b border-gray-400">
+							전체
+							<span class="ml-2 text-gray-600">32</span>
+						</h2>
 					</section>
 					<!-- //블로거 정보 -->
 					<!-- 본문 -->
@@ -287,7 +295,7 @@
 						<!-- //인덱스 페이지 -->
 						<!-- 퍼머링크 페이지-->
 						<s_permalink_article_rep>
-							<div class="mt-20">
+							<div class="mt-16">
 								<div class="my-14">
 									<h1 class="font-bold text-5xl mb-6">
 										[##_article_rep_title_##]
@@ -322,7 +330,7 @@
 												alt="profile image"
 											/>
 										</div>
-										<div class="flex flex-col justify-center ml-4">
+										<div class="flex flex-col justify-center ml-6">
 											<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
 											<p class="py-2">[##_desc_##]</p>
 										</div>
@@ -351,6 +359,65 @@
 							</section>
 							<!-- //블로거 정보 -->
 
+							<!-- 이전 글 / 다음 글 -->
+							<div class="w-full my-4">
+								<ul class="flex justify-between h-32">
+									<li class="w-1/2 flex justify-start items-center">
+										<s_article_prev>
+											<a
+												href="[##_article_prev_link_##]"
+												class="h-16 w-11/12 border-[3px] border-gray-900 rounded-md flex justify-start items-center group hover:text-white hover:bg-gray-900"
+											>
+												<div class="mx-4">
+													<svg
+														class="h-[28px] group-hover:fill-white"
+														focusable="false"
+														aria-hidden="true"
+														viewBox="0 0 24 24"
+													>
+														<path
+															d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+														></path>
+													</svg>
+												</div>
+												<div
+													class="flex flex-col text-left w-[calc(100% - 60px)] truncate"
+												>
+													<span class="text-sm">이전 글</span>
+													<span>[##_article_prev_title_##]</span>
+												</div>
+											</a>
+										</s_article_prev>
+									</li>
+									<li class="w-1/2 flex justify-end items-center">
+										<s_article_next>
+											<a
+												href="[##_article_next_link_##]"
+												class="h-16 w-11/12 border-[3px] border-gray-900 rounded-md flex justify-end items-center group hover:text-white hover:bg-gray-900"
+											>
+												<div
+													class="flex flex-col text-right w-[calc(100% - 60px)] truncate"
+												>
+													<span class="text-sm">다음 글</span>
+													<span>[##_article_next_title_##]</span>
+												</div>
+												<div class="mx-4">
+													<svg
+														class="h-[28px] group-hover:fill-white"
+														focusable="false"
+														aria-hidden="true"
+														viewBox="0 0 24 24"
+													>
+														<path
+															d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+														></path>
+													</svg>
+												</div>
+											</a>
+										</s_article_next>
+									</li>
+								</ul>
+							</div>
 							<!-- 댓글 -->
 							<s_rp>
 								<div class="comment_wrapper">
@@ -359,7 +426,7 @@
 											<p>
 												<textarea
 													name="[##_rp_input_comment_##]"
-													class="border border-gray-400 rounded-md w-full h-20 my-2 px-4 py-2 outline-none resize-none"
+													class="border-[1.5px] border-gray-900 rounded-md w-full h-20 my-2 px-4 py-3 outline-none resize-none"
 													rows="10"
 													cols="50"
 												></textarea>
@@ -398,7 +465,7 @@
 												</s_rp_member>
 												<button
 													type="submit"
-													class="w-20 h-10 bg-lime-200 rounded-md ml-auto"
+													class="w-20 h-10 border-[1.5px] border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1"
 													onclick="[##_rp_onclick_submit_##]"
 												>
 													댓글 작성
@@ -516,7 +583,6 @@
 									focusable="false"
 									aria-hidden="true"
 									viewBox="0 0 24 24"
-									aria-label="fontSize small"
 								>
 									<path
 										d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
@@ -527,7 +593,7 @@
 								<s_paging_rep>
 									<a
 										[##_paging_rep_link_##]
-										class="mx-2 px-3 py-2 w-8 h-8 rounded-full border-2"
+										class="mx-2 px-3 py-2 w-8 h-8 rounded-full border-[1.5px] border-gray-900 hover:bg-gray-900 hover:text-white"
 										>[##_paging_rep_link_num_##]
 									</a>
 								</s_paging_rep>
@@ -538,7 +604,6 @@
 									focusable="false"
 									aria-hidden="true"
 									viewBox="0 0 24 24"
-									aria-label="fontSize small"
 								>
 									<path
 										d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
