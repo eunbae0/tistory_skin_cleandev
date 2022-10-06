@@ -93,7 +93,7 @@
 															>[##_rctps_rep_title_##]</span
 														>
 													</h5>
-													<span class="text-xs text-gray-400"
+													<span class="mt-1 text-xs text-gray-400"
 														>[##_rctps_rep_simple_date_##]</span
 													>
 												</div>
@@ -118,7 +118,7 @@
 								<ul id="recentComments">
 									<s_rctrp_rep>
 										<li
-											class="w-full my-2 p-4 border-[1.5px] border-gray-900 rounded-lg text-sm"
+											class="w-full my-2 p-4 pb-3 border-[1.5px] border-gray-900 rounded-lg text-sm"
 										>
 											<a href="[##_rctrp_rep_link_##]" class="">
 												<div class="flex flex-col">
@@ -142,6 +142,7 @@
 			<!-- Header -->
 			<header
 				role="header"
+				id="header"
 				class="p-8 w-full h-30 flex justify-between items-center relative"
 			>
 				<button class="px-3" onclick="{openSidebar()}">
@@ -236,7 +237,7 @@
 						</svg>
 					</button>
 					<button
-						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group"
+						class="rounded-full border-2 border-gray-900 p-2 mr-4 cursor-pointer hover:bg-gray-900 group"
 						onclick="{onClickSettingBtn()}"
 					>
 						<svg
@@ -257,12 +258,12 @@
 			</header>
 			<div class="w-full min-h-screen relative">
 				<div
-					class="absolute left-[calc(41.666666%_/_4)] top-60 -translate-x-1/2"
+					class="absolute w-[calc(41.666666%_/_2_*_3_/_4)] left-[calc(41.666666%_/_4)] top-56 -translate-x-1/2"
 				>
 					<s_sidebar>
 						<s_sidebar_element>
 							<!-- 카테고리 -->
-							<section id="category" class="w-40">
+							<section id="category" class="">
 								<h5 class="text-center pb-2 border-b border-gray-500 w-full">
 									CATEGORY
 								</h5>
@@ -272,9 +273,9 @@
 					</s_sidebar>
 				</div>
 				<section
-					class="absolute w-[calc(41.666666%_/_2)] right-[calc(41.666666%_/_4)] top-60 translate-x-1/2"
+					class="absolute w-[calc(41.666666%_/_2_*_3_/_4)] right-[calc(41.666666%_/_4)] top-60 translate-x-1/2"
 				>
-					<ul id="toc" class="px-10 text-sm text-gray-500"></ul>
+					<ul id="toc" class="text-sm text-gray-500 relative p-3"></ul>
 				</section>
 
 				<main role="main" class="w-7/12 mx-auto my-0">
@@ -315,7 +316,7 @@
 								</s_if_var_github_link>
 							</ul>
 						</div>
-						<h2 class="w-full mt-11 my-6 py-4 border-b border-gray-400">
+						<h2 class="w-full mt-10 my-6 py-4 border-b border-gray-400">
 							전체
 							<span class="ml-2 text-gray-600">32</span>
 						</h2>
@@ -325,7 +326,9 @@
 					<s_article_rep>
 						<!-- 인덱스 페이지 -->
 						<s_index_article_rep>
-							<div class="h-64 px-5 py-7 flex justify-between items-center">
+							<div
+								class="h-60 my-5 px-5 py-7 flex justify-between items-center hover:shadow"
+							>
 								<div
 									class="h-full w-[calc(100%_-_13rem)] flex flex-col justify-between"
 								>
@@ -362,20 +365,27 @@
 						<!-- 퍼머링크 페이지-->
 						<s_permalink_article_rep>
 							<div class="mt-16">
-								<div class="my-14">
-									<h1 class="font-bold text-5xl mb-6">
+								<div class="mb-16">
+									<h1 class="font-bold text-5xl mb-16">
 										[##_article_rep_title_##]
 									</h1>
-									<div class="flex justify-between">
-										<div class="flex">
+									<div
+										class="pb-[1.125rem] border-b-[2.5px] flex justify-between"
+									>
+										<div class="flex items-center">
 											<!-- <a href="[##_article_rep_category_link_##]">
                       [##_article_rep_category_##]
                     </a> -->
+											<img
+												class="w-14 h-14 rounded-full object-cover mr-4"
+												src="[##_image_##]"
+												alt="profile image"
+											/>
 											<span class="mr-2">[##_blogger_##]</span>
 											<span class="date">[##_article_rep_date_##]</span>
 										</div>
 										<s_ad_div>
-											<div class="flex">
+											<div class="flex items-center">
 												<a href="[##_s_ad_m_link_##]" class="px-2">수정</a>
 												<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
 											</div>
@@ -384,46 +394,6 @@
 								</div>
 								<div class="article_content">[##_article_rep_desc_##]</div>
 							</div>
-
-							<!-- 블로거 정보 -->
-							<section role="banner">
-								<div class="flex justify-between my-4 items-center">
-									<div class="flex">
-										<div class="flex justify-center items-center">
-											<img
-												class="w-40 h-40 rounded-full object-cover"
-												src="[##_image_##]"
-												alt="profile image"
-											/>
-										</div>
-										<div class="flex flex-col justify-center ml-6">
-											<h2 class="text-3xl font-bold my-1">[##_blogger_##]</h2>
-											<p class="py-2">[##_desc_##]</p>
-										</div>
-									</div>
-									<ul class="w-20">
-										<s_if_var_github_link>
-											<li>
-												<a href="[##_var_github_link_##]" target="_blank">
-													<svg
-														class="h-[24px]"
-														focusable="false"
-														aria-hidden="true"
-														viewBox="0 0 24 24"
-														data-testid="GitHubIcon"
-														aria-label="fontSize large"
-													>
-														<path
-															d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
-														></path>
-													</svg>
-												</a>
-											</li>
-										</s_if_var_github_link>
-									</ul>
-								</div>
-							</section>
-							<!-- //블로거 정보 -->
 
 							<!-- 이전 글 / 다음 글 -->
 							<div class="w-full my-4">
@@ -692,5 +662,5 @@
 			<!-- //Footer -->
 		</s_t3>
 	</body>
-	<script src="./images/script.js"></script>
+	<script defer src="./images/script.js"></script>
 </html>
