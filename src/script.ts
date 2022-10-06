@@ -52,18 +52,52 @@ function onClickSettingBtn() {
 
 // toc
 const toc = document.getElementById("toc") as HTMLElement;
+
 const headers = document.querySelectorAll(".article_content h2, .article_content h3, .article_content h4");
 
-let newHTML = "";
-for (const idx in headers) {
-  const title = headers[idx].textContent;
+function setPaddingByTitle(h: string) {
+  switch (h) {
+    case 'h3':
+      return '0.75rem'
+    case 'h4':
+      return '1.5rem'
+    default:
+      return '';
+  }
+}
+let newHTML = `<div class="toc_left_border"></div>`;
+for (let idx = 0; idx < headers.length; idx++) {
+  const header = headers[idx];
+  const title = header.textContent;
   const id: string = 'headerId_' + idx;
-  headers[idx].setAttribute('id', id);
+  header.setAttribute('id', id);
   const tocListHTML = `
-  <li class="py-1">
+  <li style="margin-top:0.25rem; margin-bottom:0.25rem; margin-left:${setPaddingByTitle(header.localName)};">
     <a href="#${id}">${title}</a>
   </li>
   `;
   newHTML += tocListHTML;
 }
-toc.innerHTML = newHTML;
+if(headers.length) toc.innerHTML = newHTML;
+
+
+// interaction Observe
+const section_toc = toc.parentNode as HTMLElement;
+const section_category = document.getElementById("category")!.parentNode as HTMLElement;
+
+const callback: IntersectionObserverCallback = (entries) => {
+  entries.forEach(entry => {
+    const isIntersecting = entry.isIntersecting;
+    if (isIntersecting || pathnameSecond[1] === "") {
+      section_toc.classList.remove('intersec_toc_fixed')
+      section_category.classList.remove('intersec_cat_fixed')
+    }
+    else {
+      section_toc.classList.add('intersec_toc_fixed')
+      section_category.classList.add('intersec_cat_fixed')
+    }
+  })
+}
+const io = new IntersectionObserver(callback, {rootMargin: '32px'})
+const header = document.getElementById('header') as HTMLElement;
+io.observe(header);

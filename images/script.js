@@ -1,9 +1,9 @@
+"use strict";
 const mainBanner = document.getElementById("main_banner");
 const pathnameSecond = window.location.pathname.split('/');
-if (pathnameSecond[1]!== "" && !pathnameSecond.includes('category')) {
-  mainBanner.classList.add("hidden");
+if (pathnameSecond[1] !== "" && !pathnameSecond.includes('category')) {
+    mainBanner.classList.add("hidden");
 }
-
 const codeBlocks = document.getElementsByClassName("hljs");
 const codeTopBar = `
   <div class="absolute flex top-2 left-2">
@@ -12,53 +12,80 @@ const codeTopBar = `
     <div class="code_green code_dot"></div>
   </div>
 `;
-
 console.log(codeBlocks.length);
-for(const codeBlock of codeBlocks) {
-  const codes = codeBlock.innerHTML;
-  codeBlock.innerHTML = codeTopBar + codes;
+for (const codeBlock of codeBlocks) {
+    const codes = codeBlock.innerHTML;
+    codeBlock.innerHTML = codeTopBar + codes;
 }
-
 const sidebar = document.getElementById("sidebar");
 function openSidebar() {
-  sidebar.classList.remove('-translate-x-[100%]');
-  sidebar.classList.add('translate-x-0');
+    sidebar.classList.remove('-translate-x-[100%]');
+    sidebar.classList.add('translate-x-0');
 }
 function closeSidebar() {
-  sidebar.classList.remove('translate-x-0');
-  sidebar.classList.add('-translate-x-[100%]');
+    sidebar.classList.remove('translate-x-0');
+    sidebar.classList.add('-translate-x-[100%]');
 }
-
 // const searchBtn = document.getElementById("searchBtn");
 // const searchInput = document.getElementById("searchInput");
-
 // function hoverSearch() {
 //   searchBtn.searchBtn("style", "display: none");
 //   searchInput.setAttribute("style", "display: flex");
 // }
-
 function onClickWriteBtn() {
-  const hostname = window.location.hostname;
-  window.location = "https://" + hostname + "/manage/post";
+    const win = window;
+    const hostname = win.location.hostname;
+    win.location = "https://" + hostname + "/manage/post";
 }
-
 function onClickSettingBtn() {
-  const hostname = window.location.hostname;
-  window.location = "https://" + hostname + "/manage";
+    const win = window;
+    const hostname = win.location.hostname;
+    win.location = "https://" + hostname + "/manage";
 }
-
 // toc
 const toc = document.getElementById("toc");
 const headers = document.querySelectorAll(".article_content h2, .article_content h3, .article_content h4");
-
-let newHTML = "";
-for (const header of headers) {
-  const title = header.textContent;
-  const tocListHTML = `
-  <li class="py-1">
-    <a href="#">${title}</a>
+function setPaddingByTitle(h) {
+    switch (h) {
+        case 'h3':
+            return '0.75rem';
+        case 'h4':
+            return '1.5rem';
+        default:
+            return '';
+    }
+}
+let newHTML = `<div class="toc_left_border"></div>`;
+for (let idx = 0; idx < headers.length; idx++) {
+    const header = headers[idx];
+    const title = header.textContent;
+    const id = 'headerId_' + idx;
+    header.setAttribute('id', id);
+    const tocListHTML = `
+  <li style="margin-top:0.25rem; margin-bottom:0.25rem; margin-left:${setPaddingByTitle(header.localName)};">
+    <a href="#${id}">${title}</a>
   </li>
   `;
-  newHTML += tocListHTML;
+    newHTML += tocListHTML;
 }
-toc.innerHTML = newHTML;
+if (headers.length)
+    toc.innerHTML = newHTML;
+// interaction Observe
+const section_toc = toc.parentNode;
+const section_category = document.getElementById("category").parentNode;
+const callback = (entries) => {
+    entries.forEach(entry => {
+        const isIntersecting = entry.isIntersecting;
+        if (isIntersecting || pathnameSecond[1] === "") {
+            section_toc.classList.remove('intersec_toc_fixed');
+            section_category.classList.remove('intersec_cat_fixed');
+        }
+        else {
+            section_toc.classList.add('intersec_toc_fixed');
+            section_category.classList.add('intersec_cat_fixed');
+        }
+    });
+};
+const io = new IntersectionObserver(callback, { rootMargin: '32px' });
+const header = document.getElementById('header');
+io.observe(header);
