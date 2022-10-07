@@ -9,6 +9,11 @@ body {
 	font-family: "Poppins", sans-serif;
 }
 
+/* reply */
+#rep_date > a:hover {
+	color: rgb(255, 160, 122);
+}
+
 /* intersection Observe */
 .intersec_toc_fixed {
 	top: calc(15rem + 2rem);

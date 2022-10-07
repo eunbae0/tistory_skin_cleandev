@@ -21,7 +21,7 @@
 		<s_t3>
 			<aside
 				id="sidebar"
-				class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 overflow-auto"
+				class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 overflow-auto scrollbar-thin scrollbar-w-1.5 scrollbar-h-1.5 scrollbar-track-slate-100 scrollbar-thumb-rounded scrollbar-thumb-slate-300 scrollbar-track-rounded dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 supports-scrollbars-pr-2"
 			>
 				<button
 					class="absolute top-4 right-4 cursor-pointer"
@@ -61,7 +61,7 @@
 								<ul class="flex flex-wrap text-sm">
 									<s_random_tags>
 										<li
-											class="m-1 px-2 pt-[0.375rem] pb-1 border border-gray-900 rounded-full bg-slate-50 text-center hover:bg-gray-900 hover:text-white"
+											class="m-1 px-2 pt-[0.375rem] pb-1 border border-gray-900 rounded-full bg-slate-50 text-center hover:bg-gray-900 hover:text-white ease-out duration-300"
 										>
 											<a href="[##_tag_link_##]" class="[##_tag_class_##]">
 												[##_tag_name_##]
@@ -186,7 +186,7 @@
 
 								<div
 									id="searchInput"
-									class="w-44 h-11 mr-5 rounded-full border-2 border-gray-900 relative justify-between items-center hidden group-hover:flex transition-all ease-in-out duration-300 delay-200"
+									class="w-44 h-11 mr-5 rounded-full border-2 border-gray-900 relative justify-between items-center hidden group-hover:flex transition-all ease-out duration-300 delay-200"
 								>
 									<input
 										class="w-32 h-full pl-4 pr-2 rounded-full outline-none"
@@ -220,7 +220,7 @@
 						</s_search>
 					</div>
 					<button
-						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group"
+						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
 						onclick="{onClickWriteBtn()}"
 					>
 						<svg
@@ -237,7 +237,7 @@
 						</svg>
 					</button>
 					<button
-						class="rounded-full border-2 border-gray-900 p-2 mr-4 cursor-pointer hover:bg-gray-900 group"
+						class="rounded-full border-2 border-gray-900 p-2 mr-4 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
 						onclick="{onClickSettingBtn()}"
 					>
 						<svg
@@ -327,7 +327,7 @@
 						<!-- 인덱스 페이지 -->
 						<s_index_article_rep>
 							<div
-								class="h-60 my-5 px-5 py-7 flex justify-between items-center hover:shadow"
+								class="h-60 my-5 px-6 py-7 flex justify-between items-center hover:shadow"
 							>
 								<div
 									class="h-full w-[calc(100%_-_13rem)] flex flex-col justify-between"
@@ -366,7 +366,7 @@
 						<s_permalink_article_rep>
 							<div class="mt-16">
 								<div class="mb-16">
-									<h1 class="font-bold text-5xl mb-16">
+									<h1 class="font-bold text-5xl mb-16 leading-[1.22]">
 										[##_article_rep_title_##]
 									</h1>
 									<div
@@ -386,8 +386,37 @@
 										</div>
 										<s_ad_div>
 											<div class="flex items-center">
-												<a href="[##_s_ad_m_link_##]" class="px-2">수정</a>
-												<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+												<a
+													href="[##_s_ad_m_link_##]"
+													class="w-8 h-8 mr-3 shadow flex items-center justify-center rounded-full group hover:bg-gray-900 ease-out duration-300"
+												>
+													<svg
+														class="h-[16px] group-hover:fill-white"
+														focusable="false"
+														aria-hidden="true"
+														viewBox="0 0 24 24"
+													>
+														<path
+															d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+														></path>
+													</svg>
+												</a>
+												<a
+													href="#"
+													onclick="[##_s_ad_d_onclick_##]"
+													class="w-8 h-8 shadow flex items-center justify-center rounded-full group hover:bg-gray-900 ease-out duration-300"
+												>
+													<svg
+														class="h-[16px] group-hover:fill-white"
+														focusable="false"
+														aria-hidden="true"
+														viewBox="0 0 24 24"
+													>
+														<path
+															d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+														></path>
+													</svg>
+												</a>
 											</div>
 										</s_ad_div>
 									</div>
@@ -402,7 +431,7 @@
 										<s_article_prev>
 											<a
 												href="[##_article_prev_link_##]"
-												class="h-16 w-11/12 border-[3px] border-gray-900 rounded-md flex justify-start items-center group hover:text-white hover:bg-gray-900"
+												class="h-16 w-11/12 border-[3px] border-gray-900 rounded-md flex justify-start items-center group hover:text-white hover:bg-gray-900 ease-out duration-300"
 											>
 												<div class="mx-4">
 													<svg
@@ -429,7 +458,7 @@
 										<s_article_next>
 											<a
 												href="[##_article_next_link_##]"
-												class="h-16 w-11/12 border-[3px] border-gray-900 rounded-md flex justify-end items-center group hover:text-white hover:bg-gray-900"
+												class="h-16 w-11/12 border-[3px] border-gray-900 rounded-md flex justify-end items-center group hover:text-white hover:bg-gray-900 ease-out duration-300"
 											>
 												<div
 													class="flex flex-col text-right w-[calc(100% - 60px)] truncate"
@@ -501,7 +530,7 @@
 												</s_rp_member>
 												<button
 													type="submit"
-													class="w-20 h-10 border-[1.5px] border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1"
+													class="w-20 h-10 border-[1.5px] border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1 ease-out duration-300"
 													onclick="[##_rp_onclick_submit_##]"
 												>
 													댓글 작성
@@ -530,7 +559,10 @@
 																		<span class="block"
 																			>[##_rp_rep_name_##]</span
 																		>
-																		<span class="block text-gray-400">
+																		<span
+																			id="rep_date"
+																			class="block mt-0.5 text-gray-400"
+																		>
 																			[##_rp_rep_date_##]</span
 																		>
 																	</div>
@@ -538,17 +570,35 @@
 																<span class="flex">
 																	<a
 																		href="#"
-																		onclick="[##_rp_rep_onclick_delete_##]"
-																		class="mx-2"
-																		>&nbsp;
-																		<span>수정/삭제</span>
+																		onclick="[##_rp_rep_onclick_reply_##]"
+																		class="mr-3 pl-0.5 shadow w-8 h-8 flex items-center justify-center rounded-full group hover:bg-gray-900 ease-out duration-300"
+																	>
+																		<svg
+																			class="h-[16px] group-hover:fill-white"
+																			focusable="false"
+																			aria-hidden="true"
+																			viewBox="0 0 24 24"
+																		>
+																			<path
+																				d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"
+																			></path>
+																		</svg>
 																	</a>
 																	<a
 																		href="#"
-																		onclick="[##_rp_rep_onclick_reply_##]"
-																		class=""
-																		>&nbsp;
-																		<span>답글 달기</span>
+																		onclick="[##_rp_rep_onclick_delete_##]"
+																		class="w-8 h-8 shadow flex items-center justify-center rounded-full group hover:bg-gray-900 ease-out duration-300"
+																	>
+																		<svg
+																			class="h-[16px] group-hover:fill-white"
+																			focusable="false"
+																			aria-hidden="true"
+																			viewBox="0 0 24 24"
+																		>
+																			<path
+																				d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+																			></path>
+																		</svg>
 																	</a>
 																</span>
 															</div>
@@ -583,9 +633,18 @@
 																					<a
 																						href="#"
 																						onclick="[##_rp_rep_onclick_delete_##]"
-																						class="modify"
-																						>&nbsp;
-																						<span>수정/삭제</span>
+																						class="w-8 h-8 shadow flex items-center justify-center rounded-full group hover:bg-gray-900 ease-out duration-300"
+																					>
+																						<svg
+																							class="h-[16px] group-hover:fill-white"
+																							focusable="false"
+																							aria-hidden="true"
+																							viewBox="0 0 24 24"
+																						>
+																							<path
+																								d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+																							></path>
+																						</svg>
 																					</a>
 																				</span>
 																			</div>
