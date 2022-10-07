@@ -81,11 +81,11 @@ for (let idx = 0; idx < headers.length; idx++) {
 if(headers.length) toc.innerHTML = newHTML;
 
 
-// interaction Observe
+// Sidebar Interaction Observe
 const section_toc = toc.parentNode as HTMLElement;
 const section_category = document.getElementById("category")!.parentNode as HTMLElement;
 
-const callback: IntersectionObserverCallback = (entries) => {
+const sidebar_io_callback: IntersectionObserverCallback = (entries) => {
   entries.forEach(entry => {
     const isIntersecting = entry.isIntersecting;
     if (isIntersecting || pathnameSecond[1] === "") {
@@ -98,6 +98,18 @@ const callback: IntersectionObserverCallback = (entries) => {
     }
   })
 }
-const io = new IntersectionObserver(callback, {rootMargin: '32px'})
-const header = document.getElementById('header') as HTMLElement;
-io.observe(header);
+const sidebar_io = new IntersectionObserver(sidebar_io_callback, {rootMargin: '32px'})
+const nav_header = document.getElementById('header') as HTMLElement;
+sidebar_io.observe(nav_header);
+
+// Headers Interaction Observe
+const headers_io_callback: IntersectionObserverCallback = (entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.intersectionRect.x === 0) console.log(entry);
+  })
+}
+const headers_io = new IntersectionObserver(headers_io_callback)
+for (const header of headers) {
+  headers_io.observe(header);
+}
