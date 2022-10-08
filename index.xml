@@ -52,8 +52,28 @@
 
 <!-- Variable -->
   <variables>
-    <!-- Github Link -->
-    <variablegroup name="깃허브 주소 링크">
+    <!-- Link -->
+    <variablegroup name="커스텀 주소 링크">
+      <variable>
+        <name>portfolio_link</name>
+        <label>
+          <![CDATA[포트폴리오 주소]]>
+        </label>
+        <description>개인 포트폴리오 사이트 링크를 설정할 수 있습니다</description>
+        <type>STRING</type>
+        <option></option>
+        <default></default>
+      </variable>
+      <variable>
+        <name>email_link</name>
+        <label>
+          <![CDATA[이메일 주소]]>
+        </label>
+        <description>이메일 주소를 설정할 수 있습니다</description>
+        <type>STRING</type>
+        <option></option>
+        <default></default>
+      </variable>
       <variable>
         <name>github_link</name>
         <label>
