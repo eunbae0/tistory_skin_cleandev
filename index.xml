@@ -52,6 +52,35 @@
 
 <!-- Variable -->
   <variables>
+    <variablegroup name="폰트 설정">
+      <variable>
+        <name>font-style</name>
+        <label>
+            <![CDATA[ 폰트 변경 ]]>
+        </label>
+        <description>
+            <![CDATA[ 폰트를 변경할 수 있습니다. ]]>
+        </description>
+        <type>SELECT</type>
+        <option>
+            <![CDATA[
+            [
+                {
+                    "name":"pretendard",
+                    "label":"Pretendard",
+                    "value":"pretendard"
+                },
+                {
+                    "name":"nanum_gothic",
+                    "label":"Nanum Gothic",
+                    "value":"nanum_gothic"
+                }
+            ]
+            ]]>
+        </option>
+        <default><![CDATA[ pretendard ]]></default>
+      </variable>
+    </variablegroup>
     <!-- Link -->
     <variablegroup name="커스텀 주소 링크">
       <variable>
@@ -59,7 +88,9 @@
         <label>
           <![CDATA[포트폴리오 주소]]>
         </label>
-        <description>개인 포트폴리오 사이트 링크를 설정할 수 있습니다</description>
+        <description>
+          <![CDATA[ 개인 포트폴리오 사이트 링크를 설정할 수 있습니다. ]]>
+        </description>
         <type>STRING</type>
         <option></option>
         <default></default>
@@ -69,7 +100,9 @@
         <label>
           <![CDATA[이메일 주소]]>
         </label>
-        <description>이메일 주소를 설정할 수 있습니다</description>
+        <description>
+          <![CDATA[ 이메일 주소를 설정할 수 있습니다. ]]>
+        </description>
         <type>STRING</type>
         <option></option>
         <default></default>
@@ -79,7 +112,9 @@
         <label>
           <![CDATA[깃허브 주소]]>
         </label>
-        <description>깃허브 주소 링크를 설정할 수 있습니다</description>
+        <description>
+          <![CDATA[ 깃허브 주소 링크를 설정할 수 있습니다. ]]>
+        </description>
         <type>STRING</type>
         <option></option>
         <default></default>
