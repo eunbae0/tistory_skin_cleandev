@@ -752,6 +752,10 @@ video {
   margin-left: 1rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -832,6 +836,10 @@ video {
   height: 3rem;
 }
 
+.h-\[36px\] {
+  height: 36px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -900,6 +908,10 @@ video {
   width: 91.666667%;
 }
 
+.w-28 {
+  width: 7rem;
+}
+
 .-translate-x-\[100\%\] {
   --tw-translate-x: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -934,6 +946,10 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -1067,6 +1083,10 @@ video {
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-5 {
@@ -1217,11 +1237,6 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .text-base {
@@ -1458,6 +1473,11 @@ body {
   padding-left: 8px;
 }
 
+.tt_category .c_cnt {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 /* 파머넌트 디자인 */
 
 .article_content h2 {
@@ -1592,6 +1612,14 @@ body {
 
 .hljs-attribute {
   color: #abe338 !important;
+}
+
+.hljs-tag {
+  color: #dcc6e0 !important;
+}
+
+.hljs-name {
+  color: #dcc6e0 !important;
 }
 
 .group:hover .group-hover\:flex {

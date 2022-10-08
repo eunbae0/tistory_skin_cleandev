@@ -62,7 +62,7 @@ for (let idx = 0; idx < headers.length; idx++) {
     const id = 'headerId_' + idx;
     header.setAttribute('id', id);
     const tocListHTML = `
-  <li style="margin-top:0.25rem; margin-bottom:0.25rem; margin-left:${setPaddingByTitle(header.localName)};">
+  <li style="margin-top:0.375rem; margin-bottom:0.375rem; margin-left:${setPaddingByTitle(header.localName)};">
     <a href="#${id}">${title}</a>
   </li>
   `;

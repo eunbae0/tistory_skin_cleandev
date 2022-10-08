@@ -53,6 +53,11 @@ body {
 	padding-left: 8px;
 }
 
+.tt_category .c_cnt {
+	--tw-text-opacity: 1;
+	color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 /* 파머넌트 디자인 */
 .article_content h2 {
 	font-size: 2.4rem;
@@ -174,4 +179,10 @@ body {
 }
 .hljs-attribute {
 	color: #abe338 !important;
+}
+.hljs-tag {
+	color: #dcc6e0 !important;
+}
+.hljs-name {
+	color: #dcc6e0 !important;
 }
