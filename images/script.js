@@ -1,18 +1,17 @@
 "use strict";
 const mainBanner = document.getElementById("main_banner");
-const pathnameSecond = window.location.pathname.split('/');
-if (pathnameSecond[1] !== "" && !pathnameSecond.includes('category')) {
-    mainBanner.classList.add("hidden");
-}
-const codeBlocks = document.getElementsByClassName("hljs");
+// const pathnameSecond = window.location.pathname.split('/');
+// if (pathnameSecond[1]!== "" && !pathnameSecond.includes('category')) {
+//   mainBanner.classList.add("hidden");
+// }
+const codeBlocks = document.getElementsByTagName("code");
 const codeTopBar = `
-  <div class="absolute flex top-2 left-2">
+  <div class="code_wrapper">
     <div class="code_red code_dot"></div>
     <div class="code_yellow code_dot"></div>
     <div class="code_green code_dot"></div>
   </div>
 `;
-console.log(codeBlocks.length);
 for (const codeBlock of codeBlocks) {
     const codes = codeBlock.innerHTML;
     codeBlock.innerHTML = codeTopBar + codes;
@@ -63,7 +62,7 @@ for (let idx = 0; idx < headers.length; idx++) {
     header.setAttribute('id', id);
     const tocListHTML = `
   <li style="margin-top:0.375rem; margin-bottom:0.375rem; margin-left:${setPaddingByTitle(header.localName)};">
-    <a href="#${id}">${title}</a>
+    <a href="#${id}" class="toc_hovereffect">${title}</a>
   </li>
   `;
     newHTML += tocListHTML;

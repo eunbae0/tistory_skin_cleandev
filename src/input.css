@@ -38,6 +38,11 @@ body.nanum_gothic {
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.toc_hovereffect:hover {
+	--tw-border-opacity: 1;
+	color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
 /* 카테고리 사이드바 디자인 */
 .tt_category {
 	padding: 8px 0;
@@ -129,10 +134,18 @@ body.nanum_gothic {
 }
 
 /* 코드블럭 디자인 - A11y Dark */
+.code_wrapper {
+	position: absolute;
+	display: flex;
+	top: 14px;
+	left: 14px;
+	z-index: 10;
+}
+
 .code_dot {
-	margin-right: 3px;
-	height: 14px;
-	width: 14px;
+	margin-right: 7px;
+	width: 13px;
+	height: 13px;
 	border-radius: 9999px;
 }
 
@@ -148,7 +161,7 @@ body.nanum_gothic {
 
 .hljs {
 	position: relative;
-	padding: 58px !important;
+	padding: 12px 22px 18px 16px !important;
 	font-size: 0.875rem !important;
 	background-color: #1e1e1e !important;
 	border-radius: 5px !important;

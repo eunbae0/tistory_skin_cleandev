@@ -4,7 +4,7 @@
     <name>clean skin for developer</name>
     <version>1.0.0.0</version>
     <description>
-      <![CDATA[웹표준을 준수한 개발자를 위한 Clean 스킨입니다.]]>
+      <![CDATA[웹표준을 준수한 개발자를 위한 블랙 테마 Clean 스킨입니다.]]>
     </description>
     <license>
       <![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다.]]>
@@ -48,9 +48,58 @@
       <showValue>1</showValue>
     </tree>
     <contentWidth>500</contentWidth>
+    <cover>
+			<![CDATA[
+			[
+				{
+					"name": "blogger-info",
+					"title": "",
+					"dataType": "CUSTOM",
+					"data": [
+					]
+				},
+				{
+					"name": "pinned-article",
+					"title": "",
+					"dataType": "CUSTOM",
+          "data": [
+          {
+            "title":"[콘텐츠 - 글 선택]에서 고정할 글을 추가할 수 있습니다.",
+            "summary":"",
+            "url":"",
+            "thumbnail":""
+          }
+        ]
+				},
+				{
+					"name": "cover-thumbnail-list",
+					"title": "게시물이 존재할 경우 아래에 최신순 5건이 배열됩니다",
+					"dataType": "RECENT",
+					"data": {"category":"ALL","size":"5"}
+				}
+			]
+			]]>
+    </cover>
   </default>
 
-<!-- Variable -->
+  <cover>
+		<item>
+			<name>blogger-info</name>
+			<label><![CDATA[ 블로거 정보 표시 ]]></label>
+			<description><![CDATA[ 블로거의 정보를 표시합니다. ]]></description>
+		</item>
+		<item>
+			<name>pinned-article</name>
+			<label><![CDATA[ 글 고정 ]]></label>
+			<description><![CDATA[ 고정하고싶은 글을 선택하여 표시합니다. ]]></description>
+		</item>
+		<item>
+			<name>cover-thumbnail-list</name>
+			<label><![CDATA[ 글 리스트 ]]></label>
+			<description><![CDATA[ 메인 화면에 표시할 기본 글 리스트 입니다. ]]></description>
+		</item>
+  </cover>
+  <!-- Variable -->
   <variables>
     <variablegroup name="폰트 설정">
       <variable>
