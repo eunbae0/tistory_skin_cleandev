@@ -29,8 +29,10 @@
     <lengthOfRecentComment>30</lengthOfRecentComment>
     <lengthOfRecentTrackback>30</lengthOfRecentTrackback>
     <lengthOfLink>30</lengthOfLink>
-    <showListOnCategory>1</showListOnCategory>
-    <showListOnArchive>1</showListOnArchive>
+    <showListOnCategory>2</showListOnCategory>
+    <showListOnArchive>2</showListOnArchive>
+    <entriesOnPage>5</entriesOnPage>
+    <entriesOnList>5</entriesOnList>
     <commentMessage>
       <none>댓글이 없습니다.</none>
       <single>댓글 &lt;span class="cnt"&gt;하나&lt;/span&gt; 달렸습니다.</single>
