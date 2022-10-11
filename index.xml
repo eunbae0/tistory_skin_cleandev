@@ -52,13 +52,6 @@
 			<![CDATA[
 			[
 				{
-					"name": "blogger-info",
-					"title": "",
-					"dataType": "CUSTOM",
-					"data": [
-					]
-				},
-				{
 					"name": "pinned-article",
 					"title": "",
 					"dataType": "CUSTOM",
@@ -83,11 +76,11 @@
   </default>
 
   <cover>
-		<item>
+		<!-- <item>
 			<name>blogger-info</name>
 			<label><![CDATA[ 블로거 정보 표시 ]]></label>
 			<description><![CDATA[ 블로거의 정보를 표시합니다. ]]></description>
-		</item>
+		</item> -->
 		<item>
 			<name>pinned-article</name>
 			<label><![CDATA[ 글 고정 ]]></label>
