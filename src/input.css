@@ -17,6 +17,13 @@ body.nanum_gothic {
 	color: rgb(255, 160, 122);
 }
 
+/* paging */
+.paging_selected {
+	--tw-bg-opacity: 1;
+	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+	color: white;
+}
+
 /* intersection Observe */
 .intersec_toc_fixed {
 	top: calc(15rem + 2rem);
@@ -59,6 +66,8 @@ body.nanum_gothic {
 } */
 .sub_category_list {
 	padding-left: 8px;
+	--tw-text-opacity: 1;
+	color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .tt_category .c_cnt {
