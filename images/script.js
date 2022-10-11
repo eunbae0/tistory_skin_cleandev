@@ -1,18 +1,17 @@
 "use strict";
 const mainBanner = document.getElementById("main_banner");
 const pathnameSecond = window.location.pathname.split('/');
-if (pathnameSecond[1] !== "" && !pathnameSecond.includes('category')) {
+if (pathnameSecond.includes('entry')) {
     mainBanner.classList.add("hidden");
 }
-const codeBlocks = document.getElementsByClassName("hljs");
+const codeBlocks = document.getElementsByTagName("code");
 const codeTopBar = `
-  <div class="absolute flex top-2 left-2">
+  <div class="code_wrapper">
     <div class="code_red code_dot"></div>
     <div class="code_yellow code_dot"></div>
     <div class="code_green code_dot"></div>
   </div>
 `;
-console.log(codeBlocks.length);
 for (const codeBlock of codeBlocks) {
     const codes = codeBlock.innerHTML;
     codeBlock.innerHTML = codeTopBar + codes;
@@ -44,7 +43,7 @@ function onClickSettingBtn() {
 }
 // toc
 const toc = document.getElementById("toc");
-const headers = document.querySelectorAll(".article_content h2, .article_content h3, .article_content h4");
+const headers = document.querySelectorAll(".article_content h2, .article_content h3, .article_content h4[data-ke-size]");
 function setPaddingByTitle(h) {
     switch (h) {
         case 'h3':
@@ -62,8 +61,8 @@ for (let idx = 0; idx < headers.length; idx++) {
     const id = 'headerId_' + idx;
     header.setAttribute('id', id);
     const tocListHTML = `
-  <li style="margin-top:0.25rem; margin-bottom:0.25rem; margin-left:${setPaddingByTitle(header.localName)};">
-    <a href="#${id}">${title}</a>
+  <li style="margin-top:0.375rem; margin-bottom:0.375rem; margin-left:${setPaddingByTitle(header.localName)};">
+    <a href="#${id}" class="toc_hovereffect">${title}</a>
   </li>
   `;
     newHTML += tocListHTML;
@@ -90,14 +89,26 @@ const sidebar_io = new IntersectionObserver(sidebar_io_callback, { rootMargin: '
 const nav_header = document.getElementById('header');
 sidebar_io.observe(nav_header);
 // Headers Interaction Observe
-const headers_io_callback = (entries) => {
-    entries.forEach((entry) => {
-        console.log(entry);
-        if (entry.intersectionRect.x === 0)
-            console.log(entry);
-    });
-};
-const headers_io = new IntersectionObserver(headers_io_callback);
-for (const header of headers) {
-    headers_io.observe(header);
+// const headers_io_callback: IntersectionObserverCallback = (entries) => {
+//   entries.forEach((entry) => {
+//     console.log(entry)
+//     if (entry.intersectionRect.x === 0) console.log(entry);
+//   })
+// }
+// const headers_io = new IntersectionObserver(headers_io_callback)
+// for (const header of headers) {
+//   headers_io.observe(header);
+// }
+// sidebar add dash
+const link_sub_item = document.getElementsByClassName('link_sub_item');
+for (const i of link_sub_item) {
+    const inner = i.innerHTML;
+    i.innerHTML = '-' + inner;
 }
+// paging
+const selected_item = document.querySelector('.selected');
+const selected_item_wrapper = selected_item === null || selected_item === void 0 ? void 0 : selected_item.parentNode;
+selected_item_wrapper.classList.add('paging_selected');
+// hide 
+const another_category = document.querySelector('.another_category');
+another_category.style.display = 'none';

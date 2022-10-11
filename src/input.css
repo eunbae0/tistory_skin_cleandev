@@ -2,16 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard-std-dynamic-subset.css");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body {
+body.pretendard {
+	font-family: "Pretendard Std", sans-serif;
+}
+body.nanum_gothic {
 	font-family: "Nanum Gothic", sans-serif;
-	font-family: "Poppins", sans-serif;
 }
 
 /* reply */
 #rep_date > a:hover {
 	color: rgb(255, 160, 122);
+}
+
+/* paging */
+.paging_selected {
+	--tw-bg-opacity: 1;
+	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+	color: white;
 }
 
 /* intersection Observe */
@@ -35,6 +45,11 @@ body {
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.toc_hovereffect:hover {
+	--tw-border-opacity: 1;
+	color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
 /* 카테고리 사이드바 디자인 */
 .tt_category {
 	padding: 8px 0;
@@ -51,6 +66,13 @@ body {
 } */
 .sub_category_list {
 	padding-left: 8px;
+	--tw-text-opacity: 1;
+	color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.tt_category .c_cnt {
+	--tw-text-opacity: 1;
+	color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 /* 파머넌트 디자인 */
@@ -121,10 +143,18 @@ body {
 }
 
 /* 코드블럭 디자인 - A11y Dark */
+.code_wrapper {
+	position: absolute;
+	display: flex;
+	top: 14px;
+	left: 14px;
+	z-index: 10;
+}
+
 .code_dot {
-	margin-right: 3px;
-	height: 14px;
-	width: 14px;
+	margin-right: 7px;
+	width: 13px;
+	height: 13px;
 	border-radius: 9999px;
 }
 
@@ -140,7 +170,7 @@ body {
 
 .hljs {
 	position: relative;
-	padding: 58px !important;
+	padding: 12px 22px 18px 16px !important;
 	font-size: 0.875rem !important;
 	background-color: #1e1e1e !important;
 	border-radius: 5px !important;
@@ -174,4 +204,10 @@ body {
 }
 .hljs-attribute {
 	color: #abe338 !important;
+}
+.hljs-tag {
+	color: #dcc6e0 !important;
+}
+.hljs-name {
+	color: #dcc6e0 !important;
 }

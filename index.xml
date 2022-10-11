@@ -2,9 +2,9 @@
 <skin>
   <information>
     <name>clean skin for developer</name>
-    <version>1.0.0.0</version>
+    <version>1.0.0</version>
     <description>
-      <![CDATA[웹표준을 준수한 개발자를 위한 Clean 스킨입니다.]]>
+      <![CDATA[웹표준을 준수한 개발자를 위한 블랙 테마 Clean 스킨입니다.]]>
     </description>
     <license>
       <![CDATA[자유롭게 수정이 가능하며, 저작권 표시하에 재배포 가능합니다.]]>
@@ -29,8 +29,10 @@
     <lengthOfRecentComment>30</lengthOfRecentComment>
     <lengthOfRecentTrackback>30</lengthOfRecentTrackback>
     <lengthOfLink>30</lengthOfLink>
-    <showListOnCategory>1</showListOnCategory>
-    <showListOnArchive>1</showListOnArchive>
+    <showListOnCategory>2</showListOnCategory>
+    <showListOnArchive>2</showListOnArchive>
+    <entriesOnPage>5</entriesOnPage>
+    <entriesOnList>5</entriesOnList>
     <commentMessage>
       <none>댓글이 없습니다.</none>
       <single>댓글 &lt;span class="cnt"&gt;하나&lt;/span&gt; 달렸습니다.</single>
@@ -48,18 +50,115 @@
       <showValue>1</showValue>
     </tree>
     <contentWidth>500</contentWidth>
+    <cover>
+			<![CDATA[
+			[
+				{
+					"name": "pinned-article",
+					"title": "",
+					"dataType": "CUSTOM",
+          "data": [
+          {
+            "title":"[콘텐츠 - 글 선택]에서 고정할 글을 추가할 수 있습니다.",
+            "summary":"",
+            "url":"",
+            "thumbnail":""
+          }
+        ]
+				},
+				{
+					"name": "cover-thumbnail-list",
+					"title": "게시물이 존재할 경우 아래에 최신순 5건이 배열됩니다",
+					"dataType": "RECENT",
+					"data": {"category":"ALL","size":"5"}
+				}
+			]
+			]]>
+    </cover>
   </default>
 
-<!-- Variable -->
+  <cover>
+		<!-- <item>
+			<name>blogger-info</name>
+			<label><![CDATA[ 블로거 정보 표시 ]]></label>
+			<description><![CDATA[ 블로거의 정보를 표시합니다. ]]></description>
+		</item> -->
+		<item>
+			<name>pinned-article</name>
+			<label><![CDATA[ 글 고정 ]]></label>
+			<description><![CDATA[ 고정하고싶은 글을 선택하여 표시합니다. ]]></description>
+		</item>
+		<item>
+			<name>cover-thumbnail-list</name>
+			<label><![CDATA[ 글 리스트 ]]></label>
+			<description><![CDATA[ 메인 화면에 표시할 기본 글 리스트 입니다. ]]></description>
+		</item>
+  </cover>
+  <!-- Variable -->
   <variables>
-    <!-- Github Link -->
-    <variablegroup name="깃허브 주소 링크">
+    <variablegroup name="폰트 설정">
+      <variable>
+        <name>font-style</name>
+        <label>
+            <![CDATA[ 폰트 변경 ]]>
+        </label>
+        <description>
+            <![CDATA[ 폰트를 변경할 수 있습니다. ]]>
+        </description>
+        <type>SELECT</type>
+        <option>
+            <![CDATA[
+            [
+                {
+                    "name":"pretendard",
+                    "label":"Pretendard",
+                    "value":"pretendard"
+                },
+                {
+                    "name":"nanum_gothic",
+                    "label":"Nanum Gothic",
+                    "value":"nanum_gothic"
+                }
+            ]
+            ]]>
+        </option>
+        <default><![CDATA[ pretendard ]]></default>
+      </variable>
+    </variablegroup>
+    <!-- Link -->
+    <variablegroup name="커스텀 주소 링크">
+      <variable>
+        <name>portfolio_link</name>
+        <label>
+          <![CDATA[포트폴리오 주소]]>
+        </label>
+        <description>
+          <![CDATA[ 개인 포트폴리오 사이트 링크를 설정할 수 있습니다. ]]>
+        </description>
+        <type>STRING</type>
+        <option></option>
+        <default></default>
+      </variable>
+      <variable>
+        <name>email_link</name>
+        <label>
+          <![CDATA[이메일 주소]]>
+        </label>
+        <description>
+          <![CDATA[ 이메일 주소를 설정할 수 있습니다. ]]>
+        </description>
+        <type>STRING</type>
+        <option></option>
+        <default></default>
+      </variable>
       <variable>
         <name>github_link</name>
         <label>
           <![CDATA[깃허브 주소]]>
         </label>
-        <description>깃허브 주소 링크를 설정할 수 있습니다</description>
+        <description>
+          <![CDATA[ 깃허브 주소 링크를 설정할 수 있습니다. ]]>
+        </description>
         <type>STRING</type>
         <option></option>
         <default></default>
