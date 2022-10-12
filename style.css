@@ -644,16 +644,6 @@ video {
   margin-bottom: 0px;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -662,6 +652,16 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .mx-4 {
@@ -704,6 +704,10 @@ video {
   margin-right: 1rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -718,10 +722,6 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mt-16 {
@@ -744,8 +744,16 @@ video {
   margin-top: 0.75rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .ml-auto {
   margin-left: auto;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mt-0\.5 {
@@ -760,12 +768,24 @@ video {
   margin-left: 1rem;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .block {
@@ -800,20 +820,20 @@ video {
   height: 100%;
 }
 
-.h-40 {
-  height: 10rem;
-}
-
-.h-\[36px\] {
-  height: 36px;
-}
-
 .h-60 {
   height: 15rem;
 }
 
 .h-52 {
   height: 13rem;
+}
+
+.h-40 {
+  height: 10rem;
+}
+
+.h-\[36px\] {
+  height: 36px;
 }
 
 .h-14 {
@@ -852,6 +872,10 @@ video {
   height: 3rem;
 }
 
+.h-\[4\.5rem\] {
+  height: 4.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -888,16 +912,16 @@ video {
   width: 58.333333%;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-\[calc\(100\%_-_13rem\)\] {
   width: calc(100% - 13rem);
 }
 
 .w-52 {
   width: 13rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-14 {
@@ -1480,9 +1504,9 @@ body.nanum_gothic {
 .toc_left_border {
   position: absolute;
   left: -12px;
-  top: -6px;
+  top: 0;
   width: 2px;
-  height: calc(100% + 12px);
+  height: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
@@ -1527,27 +1551,27 @@ body.nanum_gothic {
 .article_content h2 {
   font-size: 2.4rem;
   font-weight: bold;
-  line-height: 1.8rem;
-  margin: 38px 0 !important;
+  line-height: 1.5;
+  margin: 3.1rem 0 1rem 0 !important;
 }
 
 .article_content h3 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
-  line-height: 1.8rem;
-  margin: 38px 0 !important;
+  line-height: 1.5;
+  margin: 2.96rem 0 1rem 0 !important;
 }
 
 .article_content h4 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  line-height: 1.8rem;
-  margin: 38px 0 !important;
+  line-height: 1.5;
+  margin: 2.8rem 0 1rem 0 !important;
 }
 
 .article_content p {
-  line-height: 1.8rem;
-  font-size: 1.125rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
   overflow: hidden;
   margin: 18px 0 !important;
 }
@@ -1558,7 +1582,7 @@ body.nanum_gothic {
 }
 
 .article_content ul {
-  margin: 16px 0 16px 32px;
+  margin: 18px 0 16px 32px;
 }
 
 .article_content ul > li {
@@ -1589,6 +1613,13 @@ body.nanum_gothic {
 
 .article_content figure {
   margin: 22px 0 !important;
+}
+
+.article_content figure > figcaption {
+  padding-top: 8px !important;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  /* bg-gray-500 */
 }
 
 /* 코드블럭 디자인 - A11y Dark */
