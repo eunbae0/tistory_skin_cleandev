@@ -768,26 +768,6 @@ video {
   margin-left: 1rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .block {
   display: block;
 }
@@ -836,6 +816,10 @@ video {
   height: 36px;
 }
 
+.h-\[4\.5rem\] {
+  height: 4.5rem;
+}
+
 .h-14 {
   height: 3.5rem;
 }
@@ -870,10 +854,6 @@ video {
 
 .h-12 {
   height: 3rem;
-}
-
-.h-\[4\.5rem\] {
-  height: 4.5rem;
 }
 
 .min-h-screen {
@@ -1662,6 +1642,7 @@ body.nanum_gothic {
 
 .hljs-keyword {
   color: #ffa07a !important;
+  font-weight: normal !important;
 }
 
 .hljs-comment {
@@ -1676,6 +1657,8 @@ body.nanum_gothic {
 }
 
 .hljs-title {
+  color: #ffd700 !important;
+  font-weight: normal !important;
 }
 
 .hljs-string {
@@ -1683,6 +1666,7 @@ body.nanum_gothic {
 }
 
 .hljs-literal {
+  color: #f8f8f2 !important;
 }
 
 .hljs-built_in {

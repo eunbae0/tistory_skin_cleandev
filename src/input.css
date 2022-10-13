@@ -185,6 +185,7 @@ body.nanum_gothic {
 
 .hljs-keyword {
 	color: #ffa07a !important;
+	font-weight: normal !important;
 }
 .hljs-comment {
 	color: #d4d0ab !important;
@@ -196,11 +197,14 @@ body.nanum_gothic {
 .hljs-function {
 }
 .hljs-title {
+	color: #ffd700 !important;
+	font-weight: normal !important;
 }
 .hljs-string {
 	color: #ffd700 !important;
 }
 .hljs-literal {
+	color: #f8f8f2 !important;
 }
 .hljs-built_in {
 	color: #00e0e0 !important;
