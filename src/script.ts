@@ -1,8 +1,14 @@
 const mainBanner = document.getElementById("main_banner") as HTMLElement;
+const category_wrapper = document.getElementById("category_wrapper") as HTMLElement;
 const pathnameSecond = window.location.pathname.split('/');
 if (pathnameSecond.includes('entry')) {
   mainBanner.classList.add("hidden");
+  category_wrapper.classList.add("cat_entry_top");
 }
+// function isEntryPage() {
+//   const pathnameSecond = window.location.pathname.split('/');
+//   return pathnameSecond.includes('entry');
+// }
 
 const codeBlocks = document.getElementsByTagName("code");
 const codeTopBar = `

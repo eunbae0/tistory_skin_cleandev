@@ -26,12 +26,12 @@ body.nanum_gothic {
 
 /* intersection Observe */
 .intersec_toc_fixed {
-	top: calc(15rem + 2rem);
+	top: calc(9rem + 2rem);
 	position: fixed;
 }
 
 .intersec_cat_fixed {
-	top: calc(15rem + 1rem);
+	top: calc(9rem + 1rem) !important;
 	position: fixed;
 }
 
@@ -48,6 +48,10 @@ body.nanum_gothic {
 .toc_hovereffect:hover {
 	--tw-border-opacity: 1;
 	color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
+.cat_entry_top {
+	top: 8rem;
 }
 
 /* 카테고리 사이드바 디자인 */

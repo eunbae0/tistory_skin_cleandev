@@ -612,8 +612,8 @@ video {
   right: calc(41.666666% / 4);
 }
 
-.top-60 {
-  top: 15rem;
+.top-36 {
+  top: 9rem;
 }
 
 .z-30 {
@@ -1126,6 +1126,16 @@ video {
   padding-right: 0.5rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1144,11 +1154,6 @@ video {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .py-1 {
@@ -1174,11 +1179,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
 }
 
 .pt-\[0\.375rem\] {
@@ -1477,12 +1477,12 @@ body.nanum_gothic {
 /* intersection Observe */
 
 .intersec_toc_fixed {
-  top: calc(15rem + 2rem);
+  top: calc(9rem + 2rem);
   position: fixed;
 }
 
 .intersec_cat_fixed {
-  top: calc(15rem + 1rem);
+  top: calc(9rem + 1rem) !important;
   position: fixed;
 }
 
@@ -1499,6 +1499,10 @@ body.nanum_gothic {
 .toc_hovereffect:hover {
   --tw-border-opacity: 1;
   color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
+.cat_entry_top {
+  top: 8rem;
 }
 
 /* 카테고리 사이드바 디자인 */
