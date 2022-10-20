@@ -1,9 +1,15 @@
 "use strict";
 const mainBanner = document.getElementById("main_banner");
+const category_wrapper = document.getElementById("category_wrapper");
 const pathnameSecond = window.location.pathname.split('/');
 if (pathnameSecond.includes('entry')) {
     mainBanner.classList.add("hidden");
+    category_wrapper.classList.add("cat_entry_top");
 }
+// function isEntryPage() {
+//   const pathnameSecond = window.location.pathname.split('/');
+//   return pathnameSecond.includes('entry');
+// }
 const codeBlocks = document.getElementsByTagName("code");
 const codeTopBar = `
   <div class="code_wrapper">

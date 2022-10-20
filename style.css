@@ -612,8 +612,8 @@ video {
   right: calc(41.666666% / 4);
 }
 
-.top-60 {
-  top: 15rem;
+.top-36 {
+  top: 9rem;
 }
 
 .z-30 {
@@ -644,16 +644,6 @@ video {
   margin-bottom: 0px;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -662,6 +652,16 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .mx-4 {
@@ -704,6 +704,10 @@ video {
   margin-right: 1rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -718,10 +722,6 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mt-16 {
@@ -744,8 +744,16 @@ video {
   margin-top: 0.75rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .ml-auto {
   margin-left: auto;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mt-0\.5 {
@@ -758,14 +766,6 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .block {
@@ -800,6 +800,14 @@ video {
   height: 100%;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
+.h-52 {
+  height: 13rem;
+}
+
 .h-40 {
   height: 10rem;
 }
@@ -808,12 +816,8 @@ video {
   height: 36px;
 }
 
-.h-60 {
-  height: 15rem;
-}
-
-.h-52 {
-  height: 13rem;
+.h-\[4\.5rem\] {
+  height: 4.5rem;
 }
 
 .h-14 {
@@ -888,16 +892,16 @@ video {
   width: 58.333333%;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-\[calc\(100\%_-_13rem\)\] {
   width: calc(100% - 13rem);
 }
 
 .w-52 {
   width: 13rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-14 {
@@ -1122,6 +1126,16 @@ video {
   padding-right: 0.5rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1140,11 +1154,6 @@ video {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .py-1 {
@@ -1468,21 +1477,21 @@ body.nanum_gothic {
 /* intersection Observe */
 
 .intersec_toc_fixed {
-  top: calc(15rem + 2rem);
+  top: calc(9rem + 2rem);
   position: fixed;
 }
 
 .intersec_cat_fixed {
-  top: calc(15rem + 1rem);
+  top: calc(9rem + 1rem) !important;
   position: fixed;
 }
 
 .toc_left_border {
   position: absolute;
   left: -12px;
-  top: -6px;
+  top: 0;
   width: 2px;
-  height: calc(100% + 12px);
+  height: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
@@ -1490,6 +1499,10 @@ body.nanum_gothic {
 .toc_hovereffect:hover {
   --tw-border-opacity: 1;
   color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
+.cat_entry_top {
+  top: 8rem;
 }
 
 /* 카테고리 사이드바 디자인 */
@@ -1527,27 +1540,27 @@ body.nanum_gothic {
 .article_content h2 {
   font-size: 2.4rem;
   font-weight: bold;
-  line-height: 1.8rem;
-  margin: 38px 0 !important;
+  line-height: 1.5;
+  margin: 3.1rem 0 1rem 0 !important;
 }
 
 .article_content h3 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
-  line-height: 1.8rem;
-  margin: 38px 0 !important;
+  line-height: 1.5;
+  margin: 2.96rem 0 1rem 0 !important;
 }
 
 .article_content h4 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  line-height: 1.8rem;
-  margin: 38px 0 !important;
+  line-height: 1.5;
+  margin: 2.8rem 0 1rem 0 !important;
 }
 
 .article_content p {
-  line-height: 1.8rem;
-  font-size: 1.125rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
   overflow: hidden;
   margin: 18px 0 !important;
 }
@@ -1558,7 +1571,7 @@ body.nanum_gothic {
 }
 
 .article_content ul {
-  margin: 16px 0 16px 32px;
+  margin: 18px 0 16px 32px;
 }
 
 .article_content ul > li {
@@ -1589,6 +1602,13 @@ body.nanum_gothic {
 
 .article_content figure {
   margin: 22px 0 !important;
+}
+
+.article_content figure > figcaption {
+  padding-top: 8px !important;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+  /* bg-gray-500 */
 }
 
 /* 코드블럭 디자인 - A11y Dark */
@@ -1631,6 +1651,7 @@ body.nanum_gothic {
 
 .hljs-keyword {
   color: #ffa07a !important;
+  font-weight: normal !important;
 }
 
 .hljs-comment {
@@ -1645,6 +1666,8 @@ body.nanum_gothic {
 }
 
 .hljs-title {
+  color: #ffd700 !important;
+  font-weight: normal !important;
 }
 
 .hljs-string {
@@ -1652,6 +1675,7 @@ body.nanum_gothic {
 }
 
 .hljs-literal {
+  color: #f8f8f2 !important;
 }
 
 .hljs-built_in {

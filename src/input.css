@@ -26,21 +26,21 @@ body.nanum_gothic {
 
 /* intersection Observe */
 .intersec_toc_fixed {
-	top: calc(15rem + 2rem);
+	top: calc(9rem + 2rem);
 	position: fixed;
 }
 
 .intersec_cat_fixed {
-	top: calc(15rem + 1rem);
+	top: calc(9rem + 1rem) !important;
 	position: fixed;
 }
 
 .toc_left_border {
 	position: absolute;
 	left: -12px;
-	top: -6px;
+	top: 0;
 	width: 2px;
-	height: calc(100% + 12px);
+	height: 100%;
 	--tw-bg-opacity: 1;
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
@@ -48,6 +48,10 @@ body.nanum_gothic {
 .toc_hovereffect:hover {
 	--tw-border-opacity: 1;
 	color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+
+.cat_entry_top {
+	top: 8rem;
 }
 
 /* 카테고리 사이드바 디자인 */
@@ -79,27 +83,27 @@ body.nanum_gothic {
 .article_content h2 {
 	font-size: 2.4rem;
 	font-weight: bold;
-	line-height: 1.8rem;
-	margin: 38px 0 !important;
+	line-height: 1.5;
+	margin: 3.1rem 0 1rem 0 !important;
 }
 
 .article_content h3 {
-	font-size: 2.2rem;
+	font-size: 2rem;
 	font-weight: bold;
-	line-height: 1.8rem;
-	margin: 38px 0 !important;
+	line-height: 1.5;
+	margin: 2.96rem 0 1rem 0 !important;
 }
 
 .article_content h4 {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-weight: bold;
-	line-height: 1.8rem;
-	margin: 38px 0 !important;
+	line-height: 1.5;
+	margin: 2.8rem 0 1rem 0 !important;
 }
 
 .article_content p {
-	line-height: 1.8rem;
-	font-size: 1.125rem;
+	line-height: 1.7;
+	font-size: 1.1rem;
 	overflow: hidden;
 	margin: 18px 0 !important;
 }
@@ -110,7 +114,7 @@ body.nanum_gothic {
 }
 
 .article_content ul {
-	margin: 16px 0 16px 32px;
+	margin: 18px 0 16px 32px;
 }
 
 .article_content ul > li {
@@ -140,6 +144,12 @@ body.nanum_gothic {
 
 .article_content figure {
 	margin: 22px 0 !important;
+}
+
+.article_content figure > figcaption {
+	padding-top: 8px !important;
+	--tw-text-opacity: 1;
+	color: rgb(107 114 128 / var(--tw-text-opacity)); /* bg-gray-500 */
 }
 
 /* 코드블럭 디자인 - A11y Dark */
@@ -179,6 +189,7 @@ body.nanum_gothic {
 
 .hljs-keyword {
 	color: #ffa07a !important;
+	font-weight: normal !important;
 }
 .hljs-comment {
 	color: #d4d0ab !important;
@@ -190,11 +201,14 @@ body.nanum_gothic {
 .hljs-function {
 }
 .hljs-title {
+	color: #ffd700 !important;
+	font-weight: normal !important;
 }
 .hljs-string {
 	color: #ffd700 !important;
 }
 .hljs-literal {
+	color: #f8f8f2 !important;
 }
 .hljs-built_in {
 	color: #00e0e0 !important;
