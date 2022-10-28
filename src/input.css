@@ -108,7 +108,7 @@ body.nanum_gothic {
 	margin: 18px 0 !important;
 }
 
-.article_content p > a {
+.article_content p a {
 	font-size: 1.125rem;
 	color: #056dd7;
 }

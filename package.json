@@ -4,7 +4,8 @@
   "description": "티스토리 블로그 cleandev 스킨",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,10 @@
   "homepage": "https://github.com/eunbae11/tistory_skin_cleandev#readme",
   "devDependencies": {
     "tailwindcss": "^3.1.8",
-    "typescript": "^4.8.4"
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.2"
