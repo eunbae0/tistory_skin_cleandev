@@ -1,3 +1,5 @@
+import './input.css';
+
 const mainBanner = document.getElementById("main_banner") as HTMLElement;
 const category_wrapper = document.getElementById("category_wrapper") as HTMLElement;
 const pathnameSecond = window.location.pathname.split('/');
