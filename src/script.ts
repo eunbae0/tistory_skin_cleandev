@@ -35,6 +35,8 @@ function closeSidebar() {
   sidebar.classList.remove('translate-x-0');
   sidebar.classList.add('-translate-x-[100%]');
 }
+document.getElementById("closeSidebarBtn")!.addEventListener("click", closeSidebar);
+document.getElementById("openSidebarBtn")!.addEventListener("click", openSidebar);
 
 // const searchBtn = document.getElementById("searchBtn");
 // const searchInput = document.getElementById("searchInput");
@@ -44,17 +46,19 @@ function closeSidebar() {
 //   searchInput.setAttribute("style", "display: flex");
 // }
 
-function onClickWriteBtn() {
+export function onClickWriteBtn() {
   const win: Window = window;
   const hostname = win.location.hostname;
   win.location = "https://" + hostname + "/manage/post";
 }
 
-function onClickSettingBtn() {
+export function onClickSettingBtn() {
   const win: Window = window;
   const hostname = win.location.hostname;
   win.location = "https://" + hostname + "/manage";
 }
+document.getElementById("writeBtn")!.addEventListener("click", onClickWriteBtn);
+document.getElementById("settingBtn")!.addEventListener("click", onClickSettingBtn);
 
 
 // toc
@@ -72,7 +76,7 @@ function setPaddingByTitle(h: string) {
       return '';
   }
 }
-let newHTML = `<div class="toc_left_border"></div>`;
+let newHTML = ``;
 for (let idx = 0; idx < headers.length; idx++) {
   const header = headers[idx];
   const title = header.textContent;

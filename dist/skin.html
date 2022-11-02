@@ -30,7 +30,7 @@
 			>
 				<button
 					class="absolute top-4 right-4 cursor-pointer"
-					onclick="{closeSidebar()}"
+					id="closeSidebarBtn"
 				>
 					<svg
 						class="h-[24px]"
@@ -150,7 +150,7 @@
 				id="header"
 				class="p-8 w-full h-30 flex justify-between items-center relative"
 			>
-				<button class="px-3" onclick="{openSidebar()}">
+				<button class="px-3" id="openSidebarBtn">
 					<svg
 						class="h-[24px]"
 						focusable="false"
@@ -226,7 +226,7 @@
 					</div>
 					<button
 						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
-						onclick="{onClickWriteBtn()}"
+						id="writeBtn"
 					>
 						<svg
 							class="h-[24px] group-hover:fill-white"
@@ -243,7 +243,7 @@
 					</button>
 					<button
 						class="rounded-full border-2 border-gray-900 p-2 mr-4 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
-						onclick="{onClickSettingBtn()}"
+						id="settingBtn"
 					>
 						<svg
 							class="h-[24px] dark:fill-white2 group-hover:fill-white"
@@ -279,8 +279,9 @@
 					</s_sidebar>
 				</div>
 				<section
-					class="absolute w-[calc(41.666666%_/_2_*_3_/_4)] right-[calc(41.666666%_/_4)] top-36 translate-x-1/2"
+					class="absolute w-[calc(41.666666%_/_2_*_3_/_4)] right-[calc(41.666666%_/_4)] top-36 translate-x-1/2 max-h-[550px] overflow-y-scroll"
 				>
+					<div class="toc_left_border"></div>
 					<ul id="toc" class="text-sm text-gray-500 relative p-3"></ul>
 				</section>
 

@@ -37,7 +37,8 @@ body.nanum_gothic {
 
 .toc_left_border {
 	position: absolute;
-	left: -12px;
+	/* left: -12px; */
+	left: 0;
 	top: 0;
 	width: 2px;
 	height: 100%;
@@ -224,4 +225,10 @@ body.nanum_gothic {
 }
 .hljs-name {
 	color: #dcc6e0 !important;
+}
+.hljs-selector-tag {
+	color: #00e0e0 !important;
+}
+.hljs-selector-class {
+	color: #abe338 !important;
 }
