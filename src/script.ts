@@ -76,7 +76,7 @@ function setPaddingByTitle(h: string) {
       return '';
   }
 }
-let newHTML = ``;
+let newHTML = `<div class="toc_left_border"></div>`;
 for (let idx = 0; idx < headers.length; idx++) {
   const header = headers[idx];
   const title = header.textContent;
