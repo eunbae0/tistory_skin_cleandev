@@ -114,16 +114,16 @@ const nav_header = document.getElementById('header') as HTMLElement;
 sidebar_io.observe(nav_header);
 
 // Headers Interaction Observe
-// const headers_io_callback: IntersectionObserverCallback = (entries) => {
-//   entries.forEach((entry) => {
-//     console.log(entry)
-//     if (entry.intersectionRect.x === 0) console.log(entry);
-//   })
-// }
-// const headers_io = new IntersectionObserver(headers_io_callback)
-// for (const header of headers) {
-//   headers_io.observe(header);
-// }
+const headers_io_callback: IntersectionObserverCallback = (entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.intersectionRect.x === 0) console.log(entry);
+  })
+}
+const headers_io = new IntersectionObserver(headers_io_callback)
+for (const header of headers) {
+  headers_io.observe(header);
+}
 
 // sidebar add dash
 const link_sub_item = document.getElementsByClassName('link_sub_item');
