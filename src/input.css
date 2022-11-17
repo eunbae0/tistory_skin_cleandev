@@ -26,7 +26,7 @@ body.nanum_gothic {
 
 /* intersection Observe */
 .intersec_toc_fixed {
-	top: calc(9rem + 2rem);
+	top: calc(7rem + 2rem);
 	position: fixed;
 }
 
@@ -37,13 +37,16 @@ body.nanum_gothic {
 
 .toc_left_border {
 	position: absolute;
-	/* left: -12px; */
-	left: 0;
+	left: -12px;
 	top: 0;
 	width: 2px;
 	height: 100%;
 	--tw-bg-opacity: 1;
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.toc_hovereffect {
+	transition: all 0.125s ease-in 0s;
 }
 
 .toc_hovereffect:hover {
@@ -53,6 +56,12 @@ body.nanum_gothic {
 
 .cat_entry_top {
 	top: 8rem;
+}
+
+.intersectingHeader {
+	--tw-border-opacity: 1;
+	color: rgb(17 24 39 / var(--tw-border-opacity));
+	font-size: 15px;
 }
 
 /* 카테고리 사이드바 디자인 */

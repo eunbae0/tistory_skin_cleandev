@@ -76,7 +76,7 @@ function setPaddingByTitle(h: string) {
       return '';
   }
 }
-let newHTML = ``;
+let newHTML = `<div class="toc_left_border"></div>`;
 for (let idx = 0; idx < headers.length; idx++) {
   const header = headers[idx];
   const title = header.textContent;
@@ -84,7 +84,7 @@ for (let idx = 0; idx < headers.length; idx++) {
   header.setAttribute('id', id);
   const tocListHTML = `
   <li style="margin-top:0.375rem; margin-bottom:0.375rem; margin-left:${setPaddingByTitle(header.localName)};">
-    <a href="#${id}" class="toc_hovereffect">${title}</a>
+    <a href="#${id}" title="${id}" class="toc_hovereffect">${title}</a>
   </li>
   `;
   newHTML += tocListHTML;
@@ -113,17 +113,35 @@ const sidebar_io = new IntersectionObserver(sidebar_io_callback, {rootMargin: '3
 const nav_header = document.getElementById('header') as HTMLElement;
 sidebar_io.observe(nav_header);
 
+
 // Headers Interaction Observe
-// const headers_io_callback: IntersectionObserverCallback = (entries) => {
-//   entries.forEach((entry) => {
-//     console.log(entry)
-//     if (entry.intersectionRect.x === 0) console.log(entry);
-//   })
-// }
-// const headers_io = new IntersectionObserver(headers_io_callback)
-// for (const header of headers) {
-//   headers_io.observe(header);
-// }
+const headers_io_callback: IntersectionObserverCallback = (entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting) {
+      for (const toc_header of toc.querySelectorAll('li a') as NodeListOf<HTMLAnchorElement>) {
+        if (toc_header.title === entry.target.id)
+          toc_header.classList.add('intersectingHeader');
+        else
+          toc_header.classList.remove('intersectingHeader');
+      }
+    } else if(!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+      const target_id = entry.target.id;
+      const last_num = target_id.slice(-1);
+      const new_last_num = (parseInt(last_num) - 1).toString();
+      const new_target_id = target_id.replace(/[0-9]$/, new_last_num);
+      for (const toc_header of toc.querySelectorAll('li a') as NodeListOf<HTMLAnchorElement>) {
+        if (toc_header.title === new_target_id)
+          toc_header.classList.add('intersectingHeader');
+        else
+          toc_header.classList.remove('intersectingHeader');
+      }
+    }
+  })
+}
+const headers_io = new IntersectionObserver(headers_io_callback, {rootMargin: '0px 0px -99.9%'});
+for (const header of headers) {
+  headers_io.observe(header);
+}
 
 // sidebar add dash
 const link_sub_item = document.getElementsByClassName('link_sub_item');
