@@ -45,6 +45,10 @@ body.nanum_gothic {
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.toc_hovereffect {
+	transition: all 0.125s ease-in 0s;
+}
+
 .toc_hovereffect:hover {
 	--tw-border-opacity: 1;
 	color: rgb(17 24 39 / var(--tw-border-opacity));
@@ -52,6 +56,12 @@ body.nanum_gothic {
 
 .cat_entry_top {
 	top: 8rem;
+}
+
+.intersectingHeader {
+	--tw-border-opacity: 1;
+	color: rgb(17 24 39 / var(--tw-border-opacity));
+	transform: scale(1.05);
 }
 
 /* 카테고리 사이드바 디자인 */
