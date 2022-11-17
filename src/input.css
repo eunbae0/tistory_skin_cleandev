@@ -61,7 +61,7 @@ body.nanum_gothic {
 .intersectingHeader {
 	--tw-border-opacity: 1;
 	color: rgb(17 24 39 / var(--tw-border-opacity));
-	transform: scale(1.05);
+	font-size: 15px;
 }
 
 /* 카테고리 사이드바 디자인 */
