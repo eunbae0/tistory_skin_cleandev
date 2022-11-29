@@ -23,6 +23,6 @@ CleanDev 스킨은 개발 블로그를 운영하는 개발자를 위한 깔끔�
 
 ## 스킨 다운로드 링크
 
-**[V1.0.1](https://github.com/eunbae11/tistory_skin_cleandev/releases/tag/v1.0.1)** 
+**[V1.0.2](https://github.com/eunbae11/tistory_skin_cleandev/releases/tag/v1.0.2)** 
 
-[https://github.com/eunbae11/tistory\_skin\_cleandev/releases/download/v1.0.1/clean\_dev\_version\_1.0.1.zip](https://github.com/eunbae11/tistory_skin_cleandev/releases/download/v1.0.1/clean_dev_version_1.0.1.zip)
+[https://github.com/eunbae11/tistory\_skin\_cleandev/releases/download/v1.0.2/clean\_dev\_version\_1.0.2.zip](https://github.com/eunbae11/tistory_skin_cleandev/releases/download/v1.0.2/clean_dev_version_1.0.2.zip)
