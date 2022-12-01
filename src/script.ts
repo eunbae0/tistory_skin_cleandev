@@ -153,8 +153,14 @@ for (const i of link_sub_item) {
 // paging
 const selected_item = document.querySelector('.selected');
 const selected_item_wrapper = selected_item?.parentNode as HTMLElement;
-selected_item_wrapper.classList.add('paging_selected');
+if(!!selected_item_wrapper) selected_item_wrapper.classList.add('paging_selected');
 
 // hide 
 const another_category = document.querySelector<HTMLElement>('.another_category');
-another_category!.style.display = 'none';
+if(!!another_category) another_category!.style.display = 'none';
+
+// to top
+const scrolltoTopBtn = document.getElementById("scrolltoTopBtn") as HTMLElement;
+scrolltoTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+})
