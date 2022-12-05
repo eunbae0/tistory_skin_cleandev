@@ -26,7 +26,7 @@
 		<s_t3>
 			<aside
 				id="sidebar"
-				class="fixed w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 overflow-auto scrollbar-thin scrollbar-w-1.5 scrollbar-h-1.5 scrollbar-track-slate-100 scrollbar-thumb-rounded scrollbar-thumb-slate-300 scrollbar-track-rounded dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 supports-scrollbars-pr-2"
+				class="fixed w-80 xl:w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 overflow-auto scrollbar-thin scrollbar-w-1.5 scrollbar-h-1.5 scrollbar-track-slate-100 scrollbar-thumb-rounded scrollbar-thumb-slate-300 scrollbar-track-rounded dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 supports-scrollbars-pr-2"
 			>
 				<button
 					class="absolute top-4 right-4 cursor-pointer"
@@ -173,11 +173,11 @@
 							<div class="group">
 								<button
 									id="searchBtn"
-									class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer group-hover:hidden"
+									class="rounded-full border-2 border-gray-900 p-1.5 md:p-2 mr-5 cursor-pointer group-hover:hidden"
 									onclick="[##_search_onclick_submit_##]"
 								>
 									<svg
-										class="h-[24px]"
+										class="h-[20px] md:h-[24px]"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="black"
@@ -191,7 +191,7 @@
 
 								<div
 									id="searchInput"
-									class="w-44 h-11 mr-5 rounded-full border-2 border-gray-900 relative justify-between items-center hidden group-hover:flex transition-all ease-out duration-300 delay-200"
+									class="w-44 h-9 md:h-11 mr-5 rounded-full border-2 border-gray-900 relative justify-between items-center hidden group-hover:flex transition-all ease-out duration-300 delay-200"
 								>
 									<input
 										class="w-32 h-full pl-4 pr-2 rounded-full outline-none"
@@ -206,9 +206,9 @@
 										type="button"
 										onclick="[##_search_onclick_submit_##]"
 									/>
-									<div class="pr-2">
+									<div class="pr-1.5 md:pr-2">
 										<svg
-											class="h-[24px]"
+											class="h-[20px] md:h-[24px]"
 											focusable="false"
 											aria-hidden="true"
 											viewBox="0 0 24 24"
@@ -225,7 +225,7 @@
 						</s_search>
 					</div>
 					<button
-						class="rounded-full border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
+						class="rounded-full hidden lg:block border-2 border-gray-900 p-2 mr-5 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
 						id="writeBtn"
 					>
 						<svg
@@ -242,7 +242,7 @@
 						</svg>
 					</button>
 					<button
-						class="rounded-full border-2 border-gray-900 p-2 mr-4 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
+						class="rounded-full hidden lg:block border-2 border-gray-900 p-2 mr-4 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
 						id="settingBtn"
 					>
 						<svg
@@ -264,7 +264,7 @@
 			<div id="main_wrapper" class="w-full min-h-screen relative">
 				<div
 					id="category_wrapper"
-					class="absolute w-[calc(41.666666%_/_2_*_2_/_3)] left-[calc(41.666666%_/_4)] top-56 -translate-x-1/2"
+					class="hidden xl:block absolute w-[calc(41.666666%_/_2_*_2_/_3)] left-[calc(41.666666%_/_4)] top-56 -translate-x-1/2"
 				>
 					<s_sidebar>
 						<s_sidebar_element>
@@ -279,7 +279,7 @@
 					</s_sidebar>
 				</div>
 				<section
-					class="absolute w-[calc(41.666666%_/_2_*_3_/_4)] right-[calc(41.666666%_/_4)] top-28 translate-x-1/2"
+					class="hidden lg:block w-[calc(41.666666%_/_2_*_3_/_4)] right-[calc(41.666666%_/_4)] top-28 translate-x-1/2"
 				>
 					<ul
 						id="toc"
@@ -287,7 +287,7 @@
 					></ul>
 				</section>
 
-				<main role="main" class="w-7/12 mx-auto my-0">
+				<main role="main" class="w-11/12 lg:w-9/12 xl:w-7/12 mx-auto my-0">
 					<s_cover_group>
 						<s_cover_rep>
 							<!-- <s_cover name="blogger-info">
