@@ -29,5 +29,7 @@ module.exports = {
       new TerserPlugin(),
     ]
   },
-  plugins: [new MiniCssExtractPlugin({filename : "../style.css"})],
+  plugins: [
+    new MiniCssExtractPlugin({filename : "../style.css"}),
+  ],
 };
