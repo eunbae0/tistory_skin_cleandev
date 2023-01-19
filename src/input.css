@@ -24,6 +24,11 @@ body.nanum_gothic {
 	color: white;
 }
 
+.dark .paging_selected {
+	background-color: white !important;
+	color: black;
+}
+
 /* intersection Observe */
 .intersec_toc_fixed {
 	top: calc(7rem + 2rem);
@@ -44,6 +49,10 @@ body.nanum_gothic {
 	--tw-bg-opacity: 1;
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
+.dark .toc_left_border {
+	--tw-border-opacity: 1;
+	background-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
 
 .toc_hovereffect {
 	transition: all 0.125s ease-in 0s;
@@ -52,6 +61,9 @@ body.nanum_gothic {
 .toc_hovereffect:hover {
 	--tw-border-opacity: 1;
 	color: rgb(17 24 39 / var(--tw-border-opacity));
+}
+.toc_hovereffect:hover {
+	color: white;
 }
 
 .cat_entry_top {
@@ -62,6 +74,9 @@ body.nanum_gothic {
 	--tw-border-opacity: 1;
 	color: rgb(17 24 39 / var(--tw-border-opacity));
 	font-size: 15px;
+}
+.dark .intersectingHeader {
+	color: white;
 }
 
 /* 카테고리 사이드바 디자인 */
@@ -87,6 +102,11 @@ body.nanum_gothic {
 .tt_category .c_cnt {
 	--tw-text-opacity: 1;
 	color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.dark .link_sub_item {
+	--tw-text-opacity: 1;
+	color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 /* 파머넌트 디자인 */
@@ -150,6 +170,13 @@ body.nanum_gothic {
 	border-left: 3.5px solid;
 	--tw-bg-opacity: 1;
 	background-color: rgb(248 250 252 / var(--tw-bg-opacity)); /* bg-slate-50 */
+}
+
+.dark .article_content blockquote {
+	--tw-bg-opacity: 1;
+	background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+	color: white;
+	border-color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .article_content figure {

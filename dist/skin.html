@@ -28,7 +28,7 @@
 		<s_t3>
 			<aside
 				id="sidebar"
-				class="fixed w-80 xl:w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 overflow-auto scrollbar-thin scrollbar-w-1.5 scrollbar-h-1.5 scrollbar-track-slate-100 scrollbar-thumb-rounded scrollbar-thumb-slate-300 scrollbar-track-rounded dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 supports-scrollbars-pr-2 dark:bg-slate-900"
+				class="fixed w-80 xl:w-[calc(41.666666%_/_2)] h-screen top-0 left-0 -translate-x-[100%] bg-white z-30 transition ease-in-out duration-500 border-r border-gray-200 dark:border-gray-500 overflow-auto scrollbar-thin scrollbar-w-1.5 scrollbar-h-1.5 scrollbar-track-slate-100 scrollbar-thumb-rounded scrollbar-thumb-slate-300 scrollbar-track-rounded dark:scrollbar-track-slate-500/[0.16] dark:scrollbar-thumb-slate-500/50 supports-scrollbars-pr-2 dark:bg-slate-900"
 			>
 				<button
 					class="absolute top-4 right-4 cursor-pointer"
@@ -68,9 +68,12 @@
 								<ul class="flex flex-wrap text-sm">
 									<s_random_tags>
 										<li
-											class="m-1 px-2 pt-[0.375rem] pb-1 border border-gray-900 dark:border-gray-500 rounded-full bg-slate-50 text-center hover:bg-gray-900 hover:text-white ease-out duration-300 dark:bg-slate-800"
+											class="m-1 px-2 pt-[0.375rem] pb-1 border border-gray-900 group dark:border-gray-500 rounded-full bg-slate-50 text-center hover:bg-gray-900 hover:text-white ease-out duration-300 dark:bg-slate-800 dark:hover:bg-white"
 										>
-											<a href="[##_tag_link_##]" class="[##_tag_class_##]">
+											<a
+												href="[##_tag_link_##]"
+												class="[##_tag_class_##] dark:group-hover:text-black"
+											>
 												[##_tag_name_##]
 											</a>
 										</li>
@@ -228,7 +231,7 @@
 						</s_search>
 					</div>
 					<button
-						class="rounded-full hidden lg:block border-2 border-gray-900 dark:border-slate-600 p-2 mr-5 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
+						class="rounded-full hidden lg:block border-2 border-gray-900 dark:border-slate-600 p-2 mr-5 cursor-pointer hover:bg-gray-900 dark:hover:bg-slate-600 group ease-out duration-300"
 						id="writeBtn"
 					>
 						<svg
@@ -245,7 +248,7 @@
 						</svg>
 					</button>
 					<button
-						class="rounded-full hidden lg:block border-2 border-gray-900 dark:border-slate-600 p-2 mr-4 cursor-pointer hover:bg-gray-900 group ease-out duration-300"
+						class="rounded-full hidden lg:block border-2 border-gray-900 dark:border-slate-600 p-2 mr-4 cursor-pointer hover:bg-gray-900 dark:hover:bg-slate-600 group ease-out duration-300"
 						id="settingBtn"
 					>
 						<svg
@@ -286,7 +289,7 @@
 				>
 					<ul
 						id="toc"
-						class="text-sm text-gray-500 p-3 overflow-y-scroll max-h-[550px]"
+						class="text-sm text-gray-500 dark:text-slate-400 p-3 overflow-y-scroll max-h-[550px]"
 					></ul>
 				</section>
 
@@ -474,7 +477,7 @@
 						<!-- 인덱스 페이지 -->
 						<s_index_article_rep>
 							<div
-								class="h-60 my-5 px-6 py-7 flex justify-between items-center hover:shadow dark:bg-slate-800 darK:rounded-md"
+								class="h-60 my-5 px-6 py-7 flex justify-between items-center hover:shadow dark:bg-slate-800 dark:rounded-md"
 							>
 								<div
 									class="h-full w-[calc(100%_-_13rem)] flex flex-col justify-between"
@@ -491,7 +494,7 @@
 											[##_article_rep_summary_##]
 										</p>
 									</a>
-									<p class="text-sm text-gray-500">
+									<p class="text-sm text-gray-500 dark:text-slate-400">
 										<a href="[##_article_rep_category_link_##]">
 											[##_article_rep_category_##]
 										</a>
@@ -519,7 +522,7 @@
 										[##_article_rep_title_##]
 									</h1>
 									<div
-										class="pb-[1.125rem] border-b-[2.5px] flex justify-between"
+										class="pb-[1.125rem] border-b-[2.5px] dark:border-slate-600 flex justify-between"
 									>
 										<div class="flex items-center">
 											<!-- <a href="[##_article_rep_category_link_##]">
@@ -604,7 +607,7 @@
 										<s_article_prev>
 											<a
 												href="[##_article_prev_link_##]"
-												class="h-16 w-11/12 border-[3px] border-gray-900 dark:border-white dark:bg-slate-800 rounded-md flex justify-start items-center group hover:text-white hover:bg-gray-900 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
+												class="h-16 w-11/12 border-[3px] border-gray-900 dark:border-slate-500 dark:bg-slate-800 rounded-md flex justify-start items-center group hover:text-white hover:bg-gray-900 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
 											>
 												<div class="mx-4">
 													<svg
@@ -631,7 +634,7 @@
 										<s_article_next>
 											<a
 												href="[##_article_next_link_##]"
-												class="h-16 w-11/12 border-[3px] border-gray-900 dark:border-white dark:bg-slate-800 rounded-md flex justify-end items-center group hover:text-white hover:bg-gray-900 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
+												class="h-16 w-11/12 border-[3px] border-gray-900 dark:border-slate-500 dark:bg-slate-800 rounded-md flex justify-end items-center group hover:text-white hover:bg-gray-900 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
 											>
 												<div
 													class="flex flex-col text-right w-[calc(100% - 60px)] truncate ml-3"
@@ -664,7 +667,7 @@
 											<p>
 												<textarea
 													name="[##_rp_input_comment_##]"
-													class="border-[1.5px] border-gray-900 dark:border-white dark:bg-slate-800 rounded-md w-full h-20 my-2 px-4 py-3 outline-none resize-none"
+													class="border-[1.5px] border-gray-900 dark:border-slate-600 dark:bg-slate-800 rounded-md w-full h-20 my-2 px-4 py-3 outline-none resize-none"
 													rows="10"
 													cols="50"
 												></textarea>
@@ -703,7 +706,7 @@
 												</s_rp_member>
 												<button
 													type="submit"
-													class="w-20 h-10 mb-6 border-[1.5px] border-gray-900 dark:border-white dark:bg-slate-800 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
+													class="w-20 h-10 border-[1.5px] border-gray-900 dark:border-slate-600 dark:bg-slate-800 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
 													onclick="[##_rp_onclick_submit_##]"
 												>
 													댓글 작성
@@ -962,7 +965,7 @@
 									<p>
 										<textarea
 											name="[##_guest_textarea_body_##]"
-											class="border-[1.5px] border-gray-900 dark:border-white dark:bg-slate-800 rounded-md w-full h-20 my-2 px-4 py-3 outline-none resize-none"
+											class="border-[1.5px] border-gray-900 dark:border-slate-600 dark:bg-slate-800 rounded-md w-full h-20 my-2 px-4 py-3 outline-none resize-none"
 											rows="6"
 											cols="50"
 										></textarea>
@@ -999,7 +1002,7 @@
 
 										<button
 											type="submit"
-											class="w-28 h-10 border-[1.5px] border-gray-900 dark:border-white dark:bg-slate-800 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
+											class="w-28 h-10 border-[1.5px] border-gray-900 dark:border-slate-600 dark:bg-slate-800 hover:bg-gray-900 hover:text-white rounded-lg ml-auto pt-1 dark:hover:text-black dark:hover:bg-white ease-out duration-300"
 											onclick="[##_guest_onclick_submit_##]"
 										>
 											방명록 남기기
@@ -1023,11 +1026,11 @@
 							<ul class="flex flex-wrap text-sm">
 								<s_tag_rep>
 									<li
-										class="m-1 px-2 py-1 border border-gray-900 dark:border-white rounded-full bg-slate-50 dark:bg-slate-700 text-center hover:bg-gray-900 hover:text-white dark:hover:bg-white ease-out duration-300"
+										class="m-1 px-2 py-1 border border-gray-900 dark:border-gray-500 group rounded-full bg-slate-50 dark:bg-slate-700 text-center hover:bg-gray-900 hover:text-white dark:hover:bg-white ease-out duration-300"
 									>
 										<a
 											href="[##_tag_link_##]"
-											class="[##_tag_class_##] dark:hover:text-black"
+											class="[##_tag_class_##] dark:group-hover:text-black"
 											>[##_tag_name_##]</a
 										>
 									</li>

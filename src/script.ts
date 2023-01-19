@@ -14,6 +14,31 @@ if (pathnameSecond.includes("entry")) {
 //   return pathnameSecond.includes('entry');
 // }
 
+// dark mode
+const htmlElement = document.documentElement;
+if (
+	localStorage.theme === "dark" ||
+	(!("theme" in localStorage) &&
+		window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+	localStorage.theme = "dark";
+	htmlElement.classList.add("dark");
+} else {
+	htmlElement.classList.remove("dark");
+}
+
+const darkModeBtn = document.getElementById("darkmodeBtn") as HTMLButtonElement;
+darkModeBtn.addEventListener("click", () => {
+	if (localStorage.theme === "dark") {
+		localStorage.theme = "light";
+		htmlElement.classList.remove("dark");
+	} else {
+		localStorage.theme = "dark";
+		htmlElement.classList.add("dark");
+	}
+});
+
+// code block
 const codeBlocks = document.getElementsByTagName("code");
 const codeTopBar = `
   <div class="code_wrapper">
@@ -28,6 +53,7 @@ for (const codeBlock of codeBlocks) {
 	codeBlock.innerHTML = codeTopBar + codes;
 }
 
+// side bar
 const sidebar = document.getElementById("sidebar") as HTMLElement;
 function openSidebar() {
 	sidebar.classList.remove("-translate-x-[100%]");
@@ -52,6 +78,7 @@ document
 //   searchInput.setAttribute("style", "display: flex");
 // }
 
+// nav button
 export function onClickWriteBtn() {
 	const win: Window = window;
 	const hostname = win.location.hostname;
@@ -168,7 +195,7 @@ for (const i of link_sub_item) {
 // paging
 const selected_item = document.querySelector(".selected");
 const selected_item_wrapper = selected_item?.parentNode as HTMLElement;
-if (!!selected_item_wrapper)
+if (!!selected_item_wrapper && selected_item_wrapper.tagName === "A")
 	selected_item_wrapper.classList.add("paging_selected");
 
 // hide
@@ -181,28 +208,3 @@ const scrolltoTopBtn = document.getElementById("scrolltoTopBtn") as HTMLElement;
 scrolltoTopBtn.addEventListener("click", () => {
 	window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-// dark mode
-const darkModeBtn = document.getElementById("darkmodeBtn") as HTMLButtonElement;
-darkModeBtn.addEventListener("click", () => {
-	const htmlElement = document.querySelector("html") as HTMLElement;
-	if (htmlElement.classList.value === "dark")
-		htmlElement.classList.remove("dark");
-	else htmlElement.classList.add("dark");
-});
-
-// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-// if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-//   document.documentElement.classList.add('dark')
-// } else {
-//   document.documentElement.classList.remove('dark')
-// }
-
-// // Whenever the user explicitly chooses light mode
-// localStorage.theme = 'light'
-
-// // Whenever the user explicitly chooses dark mode
-// localStorage.theme = 'dark'
-
-// // Whenever the user explicitly chooses to respect the OS preference
-// localStorage.removeItem('theme')
