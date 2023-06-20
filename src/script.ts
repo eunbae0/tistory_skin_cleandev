@@ -6,8 +6,8 @@ const category_wrapper = document.getElementById(
 ) as HTMLElement;
 const pathnameSecond = window.location.pathname.split("/");
 if (pathnameSecond.includes("entry")) {
-	mainBanner.classList.add("hidden");
-	category_wrapper.classList.add("cat_entry_top");
+	// mainBanner.classList.add("hidden");
+	category_wrapper.style.display = "none";
 }
 // function isEntryPage() {
 //   const pathnameSecond = window.location.pathname.split('/');
@@ -112,7 +112,7 @@ function setPaddingByTitle(h: string) {
 			return "";
 	}
 }
-let newHTML = `<div class="toc_left_border"></div>`;
+let newHTML = `<div></div>`;
 for (let idx = 0; idx < headers.length; idx++) {
 	const header = headers[idx];
 	const title = header.textContent;
@@ -134,23 +134,23 @@ const section_toc = toc.parentNode as HTMLElement;
 const section_category = document.getElementById("category")!
 	.parentNode as HTMLElement;
 
-const sidebar_io_callback: IntersectionObserverCallback = (entries) => {
-	entries.forEach((entry) => {
-		const isIntersecting = entry.isIntersecting;
-		if (isIntersecting || pathnameSecond[1] === "") {
-			section_toc.classList.remove("intersec_toc_fixed");
-			section_category.classList.remove("intersec_cat_fixed");
-		} else {
-			section_toc.classList.add("intersec_toc_fixed");
-			section_category.classList.add("intersec_cat_fixed");
-		}
-	});
-};
-const sidebar_io = new IntersectionObserver(sidebar_io_callback, {
-	rootMargin: "32px",
-});
-const nav_header = document.getElementById("header") as HTMLElement;
-sidebar_io.observe(nav_header);
+// const sidebar_io_callback: IntersectionObserverCallback = (entries) => {
+// 	entries.forEach((entry) => {
+// 		const isIntersecting = entry.isIntersecting;
+// 		if (isIntersecting || pathnameSecond[1] === "") {
+// 			section_toc.classList.remove("intersec_toc_fixed");
+// 			section_category.classList.remove("intersec_cat_fixed");
+// 		} else {
+// 			section_toc.classList.add("intersec_toc_fixed");
+// 			section_category.classList.add("intersec_cat_fixed");
+// 		}
+// 	});
+// };
+// const sidebar_io = new IntersectionObserver(sidebar_io_callback, {
+// 	rootMargin: "32px",
+// });
+// const nav_header = document.getElementById("header") as HTMLElement;
+// sidebar_io.observe(nav_header);
 
 // Headers Interaction Observe
 const headers_io_callback: IntersectionObserverCallback = (entries) => {

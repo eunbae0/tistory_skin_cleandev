@@ -1,40 +1,53 @@
 {
-  "name": "tistory_skin_cleandev",
-  "version": "1.0.0",
-  "description": "티스토리 블로그 cleandev 스킨",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "watch": "webpack --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eunbae11/tistory_skin_cleandev.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eunbae11/tistory_skin_cleandev/issues"
-  },
-  "homepage": "https://github.com/eunbae11/tistory_skin_cleandev#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "css-loader": "^6.7.1",
-    "css-minimizer-webpack-plugin": "^4.2.2",
-    "mini-css-extract-plugin": "^2.6.1",
-    "postcss": "^8.4.18",
-    "postcss-loader": "^7.0.1",
-    "style-loader": "^3.3.1",
-    "tailwindcss": "^3.2.1",
-    "terser-webpack-plugin": "^5.3.6",
-    "ts-loader": "^9.4.1",
-    "typescript": "^4.8.4",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
-  },
-  "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "pretendard": "^1.3.6"
-  }
+	"name": "tistory_skin_cleandev",
+	"version": "1.1.0",
+	"description": "티스토리 블로그 cleandev 스킨",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"watch": "webpack --watch",
+		"storybook": "start-storybook -p 6006",
+		"build-all": "concurrently \"webpack --watch\" \"start-storybook -p 6006\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/eunbae11/tistory_skin_cleandev.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/eunbae11/tistory_skin_cleandev/issues"
+	},
+	"homepage": "https://github.com/eunbae11/tistory_skin_cleandev#readme",
+	"devDependencies": {
+		"@babel/core": "^7.20.12",
+		"@storybook/addon-actions": "^6.5.15",
+		"@storybook/addon-essentials": "^6.5.15",
+		"@storybook/addon-interactions": "^6.5.15",
+		"@storybook/addon-links": "^6.5.15",
+		"@storybook/builder-webpack5": "^6.5.15",
+		"@storybook/html": "^6.5.15",
+		"@storybook/manager-webpack5": "^6.5.15",
+		"@storybook/testing-library": "^0.0.13",
+		"autoprefixer": "^10.4.13",
+		"babel-loader": "^8.3.0",
+		"concurrently": "^7.6.0",
+		"css-loader": "^6.7.1",
+		"css-minimizer-webpack-plugin": "^4.2.2",
+		"mini-css-extract-plugin": "^2.6.1",
+		"postcss": "^8.4.18",
+		"postcss-loader": "^7.0.1",
+		"style-loader": "^3.3.1",
+		"tailwindcss": "^3.2.1",
+		"terser-webpack-plugin": "^5.3.6",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.8.4",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"dependencies": {
+		"@tailwindcss/line-clamp": "^0.4.2",
+		"pretendard": "^1.3.6"
+	}
 }
