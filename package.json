@@ -1,6 +1,6 @@
 {
 	"name": "tistory_skin_cleandev",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "티스토리 블로그 cleandev 스킨",
 	"main": "index.js",
 	"scripts": {
